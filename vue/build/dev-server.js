@@ -21,6 +21,16 @@ var autoOpenBrowser = !!config.dev.autoOpenBrowser
 var proxyTable = config.dev.proxyTable
 
 var app = express()
+
+app.use('',express.static(__dirname+'../src/assets/'))
+//接口
+app.get('/api',(req,res,next)=>{
+  res.end('0')
+})
+app.post('/api',(req,res,next)=>{
+  res.end('0')
+})
+
 var compiler = webpack(webpackConfig)
 
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
@@ -55,13 +65,6 @@ app.use(require('connect-history-api-fallback')())
 // serve webpack bundle output
 app.use(devMiddleware)
 
-//接口
-app.get('/api.js',(req,res,next)=>{
-  res.end('0')
-})
-app.post('/api.js',(req,res,next)=>{
-  res.end('0')
-})
 // enable hot-reload and state-preserving
 // compilation error display
 app.use(hotMiddleware)

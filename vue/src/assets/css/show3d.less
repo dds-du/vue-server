@@ -1,0 +1,48 @@
+#show3D {
+	.since{ transform-style: preserve-3d;width: 400px;height: 400px;margin:50px auto;perspective:1000px;position: relative; }
+	.box,.word { width: 100%;height: 100%; }
+	.box{transform-style: preserve-3d;position: relative; }
+	.word{transform-style: preserve-3d;position: relative; }
+	.word li{position: absolute; text-align: center; font-size: 16px; transform: translate3d( 75px,94px,88px ); -transform: translate3d( 75px,94px,88px ); color: yellow; font-weight: bold;}
+
+	.item{width:120%; top:50px; left:-10%; position: absolute; border: 2px solid red; border-radius: 10px; background: #8FF3F2; color: #EA337D; display: none;}
+	.item p{font:bolder 14px/24px "微软雅黑";word-break: break-all;}
+	.item a{ position: absolute;width: 19px;height: 19px;right:-20px; top:-20px; border-radius: 50%; border: 1px solid #C3BEBE; opacity: 0.8; line-height: 15px;text-align: center;color: red;text-decoration: none;font-size: 20px;font-weight: bold;}
+	.item a:hover{ opacity: 1; }
+
+	.table { margin: 20px auto; height: 106px;width:340px;}
+	.table li { float: left;margin-right: 5px; }
+	.table a {float: left; width: 80px; height: 12px; padding-top: 94px;  font:bolder 14px/1 "微软雅黑" ; color: red; text-decoration: none; text-align: center; }
+	.table li:nth-of-type(1) a { background: url(/static/img/circle.png) no-repeat center top; }
+	.table li:nth-of-type(2) a { background: url(/static/img/zhu.png) no-repeat center top; }
+	.table li:nth-of-type(3) a { background: url(/static/img/zhui.png) no-repeat center top; }
+	.table li:nth-of-type(4) a { background: url(/static/img/xie.png) no-repeat center top; }
+	.table li:nth-of-type(1) a:hover { background: url(/static/img/circle2.png) no-repeat center top; }
+	.table li:nth-of-type(2) a:hover { background: url(/static/img/zhu2.png) no-repeat center top; }
+	.table li:nth-of-type(3) a:hover { background: url(/static/img/zhui2.png) no-repeat center top; }
+	.table li:nth-of-type(4) a:hover { background: url(/static/img/xie2.png) no-repeat center top; }
+	.table li:nth-of-type(1) .active { background: url(/static/img/circle2.png) no-repeat center top; }
+	.table li:nth-of-type(2) .active { background: url(/static/img/zhu2.png) no-repeat center top; }
+	.table li:nth-of-type(3) .active { background: url(/static/img/zhui2.png) no-repeat center top; }
+	.table li:nth-of-type(4) .active { background: url(/static/img/xie2.png) no-repeat center top; }
+
+	.line {width: 800px; height: 1px; margin: 20px auto; background: linear-gradient(90deg,blue,yellow);}
+
+	.btn{ width:203px;height: 32px;background: linear-gradient(0deg,#D8D7D7,#fff); margin: 20px auto;border-radius: 15px;}
+	.btn a {width: 100px;height: 30px;font-size:12px;float: left; line-height: 30px;text-align: center;border: 1px solid #C9C3C3;margin-right: -1px; color: #4A4646; text-decoration: none;}
+	.btn a:hover{ background: linear-gradient(0deg,#2D61A8,#91A4F1); color: #1317D2; }
+	.btn .active{ background: linear-gradient(0deg,#91A4F1,#2D61A8); color: #1317D2; }
+	.btn .left {border-radius: 15px 0 0 15px;}
+	.btn .right {border-radius: 0 15px 15px 0;}
+
+	.txt { width:500px; height: 330px; position: absolute; left: 50%;top: 100px; margin-left: -250px; border: 1px solid #AEABAB; border-radius: 10px;  display: none;}
+	.txt p { margin: 10px 0 0 10px; height: 30px;line-height: 30px; font-size: 12px;text-indent: 40px; }
+	.txt textarea{ resize: none; width:400px;height:200px;margin: 10px 39px; outline: none; border-radius: 10px; background-color: #C9BDD7; padding: 10px; }
+	.txt .btn1,.txt .btn2 { height: 30px;width: 100px; line-height: 30px; text-align: center;border-radius: 15px; border: none; background: linear-gradient(0deg,#D8D7D7,#fff); cursor: pointer; }
+	.txt .btn1:hover,.txt .btn2:hover { background: linear-gradient(0deg,#2D61A8,#91A4F1); color: #1317D2; }
+	.txt .btn1 {float: left;margin-left: 50px;}
+	.txt .btn2 {float: right;margin-right: 50px;}
+	.txt .close{ position: absolute;width: 19px;height: 19px;right:-20px; top:-20px; background:blue url(/static/img/Del.png); border-radius: 50%; border: 1px solid #C3BEBE; opacity: 0.6; }
+	.txt .close:hover { opacity: 0.8; }
+}
+	
