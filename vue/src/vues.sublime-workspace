@@ -1,0 +1,1057 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"tran",
+				"transition"
+			],
+			[
+				"bootstra",
+				"bootstrap-theme.min.css"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"se",
+				"no_sel.jpg	w:471 h:38"
+			],
+			[
+				"tea",
+				"text-align"
+			],
+			[
+				"borr",
+				"border-radius"
+			],
+			[
+				"boxs",
+				"box-sizing"
+			],
+			[
+				"go",
+				"goTop.png	w:92 h:92"
+			],
+			[
+				"bags",
+				"background-size"
+			],
+			[
+				"r",
+				"right"
+			],
+			[
+				"inl",
+				"inline-block"
+			],
+			[
+				"over",
+				"overflow-y"
+			],
+			[
+				"c",
+				"css/"
+			],
+			[
+				"str",
+				"strokeStyle"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"tra",
+				"translateY()"
+			],
+			[
+				"f",
+				"fixed"
+			],
+			[
+				"trans",
+				"transform"
+			],
+			[
+				"offset",
+				"offsetLeft"
+			],
+			[
+				"docu",
+				"documentElement"
+			],
+			[
+				"ont",
+				"ontouchend"
+			],
+			[
+				"li",
+				"link	Tag"
+			],
+			[
+				"v",
+				"visible"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"speed",
+				"speedY"
+			],
+			[
+				"con",
+				"cone"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"ro",
+				"rotateX()"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"jq",
+				"jquery-2.0.3.js"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"ma",
+				"margin-right"
+			],
+			[
+				"bad",
+				"background"
+			],
+			[
+				"im",
+				"img/"
+			],
+			[
+				"wor",
+				"word-break"
+			],
+			[
+				"bagc",
+				"background-color"
+			],
+			[
+				"tmx",
+				"TweenMax.js"
+			],
+			[
+				"bo",
+				"border"
+			],
+			[
+				"m",
+				"module2.js"
+			],
+			[
+				"mo",
+				"module2.js"
+			],
+			[
+				"pr",
+				"preserve-3d"
+			],
+			[
+				"op",
+				"opacity"
+			],
+			[
+				"re",
+				"removeClass"
+			],
+			[
+				"tr",
+				"translate()"
+			],
+			[
+				"bg",
+				"bg+	background: ${1:#fff} url(${2}) ${3:0} ${4:0} ${5:no-repeat};"
+			],
+			[
+				"of",
+				"overflow"
+			],
+			[
+				"b",
+				"bootstrap.css"
+			],
+			[
+				"ov",
+				"overflow"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"colu",
+				"column-count"
+			],
+			[
+				"s",
+				"source	Tag"
+			],
+			[
+				"FlashUtil32_23_0_0_207_pepper",
+				"FlashUtil32_23_0_0_207_pepper.exe"
+			],
+			[
+				"cur",
+				"cursor"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"wi",
+				"window"
+			],
+			[
+				"star",
+				"startY"
+			],
+			[
+				"st",
+				"style	Tag"
+			],
+			[
+				"fi",
+				"fillRect"
+			],
+			[
+				"2",
+				"2.png	w:690 h:110"
+			],
+			[
+				"h",
+				"height	Attr"
+			],
+			[
+				"Min",
+				"getMinutes"
+			],
+			[
+				"d",
+				"document"
+			],
+			[
+				"ge",
+				"getElementById"
+			],
+			[
+				"get",
+				"getElementsByTagName"
+			],
+			[
+				"g",
+				"getElementById"
+			],
+			[
+				"cl",
+				"clear"
+			],
+			[
+				"bl",
+				"block"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"pro",
+				"prototype"
+			],
+			[
+				"tim",
+				"timer"
+			],
+			[
+				"in",
+				"index"
+			],
+			[
+				"en",
+				"endFn"
+			],
+			[
+				"z",
+				"z-index"
+			],
+			[
+				"offs",
+				"offsetLeft"
+			],
+			[
+				"fl",
+				"float"
+			],
+			[
+				"list",
+				"list-style"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"p",
+				"padding"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"wid",
+				"width"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/C/Users/Administrator/Desktop/vue-server/vue/package.json",
+			"settings":
+			{
+				"buffer_size": 1761,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Administrator/Desktop/vue-server/vue/build/dev-server.js",
+			"settings":
+			{
+				"buffer_size": 2577,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Administrator/Desktop/vue-server/vue/build/webpack.base.conf.js",
+			"settings":
+			{
+				"buffer_size": 1679,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/C/Users/Administrator/Desktop/vue-server/vue/build/webpack.dev.conf.js",
+			"settings":
+			{
+				"buffer_size": 1337,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "// The Vue build version to load with the `import` command\n// (runtime-only or standalone) has been set in webpack.base.conf with an alias.\nlet $=require()\nalert($(window))\n//require('@lib/css/bootstrap.min.css')\n//require('@lib/css/bootstrap-theme.min.css')\nrequire('@lib/js/jquery.min-3.1.1.js')\n//require('@lib/js/bootstrap.min.js')\nrequire('native-promise-only')\n\nrequire('./assets/css/commen.less')\n\nimport Vue from 'vue'\nimport App from './App'\nimport router from './router'\n\nVue.config.productionTip = false\n\n/* eslint-disable no-new */\nnew Vue({\n  el: '#app',\n  router,\n  template: '<App/>',\n  components: { App }\n})\n",
+			"file": "main.js",
+			"file_size": 620,
+			"file_write_time": 131447531698671023,
+			"settings":
+			{
+				"buffer_size": 625,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "router/index.js",
+			"settings":
+			{
+				"buffer_size": 642,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app.vue",
+			"settings":
+			{
+				"buffer_size": 8818,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "assets/css/main.less",
+			"settings":
+			{
+				"buffer_size": 2509,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "components/index.vue",
+			"settings":
+			{
+				"buffer_size": 281,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 104.0,
+		"last_filter": "Snippet: ",
+		"selected_items":
+		[
+			[
+				"Snippet: ",
+				"Snippet: html"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"colo",
+				"Color Picker"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"picp",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/Administrator/Desktop/vue-server",
+		"/C/Users/Administrator/Desktop/vue-server/vue",
+		"/C/Users/Administrator/Desktop/vue-server/vue/build",
+		"/C/Users/Administrator/Desktop/vue-server/vue/config",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/api",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/assets",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/assets/css",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/components",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/libs",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/libs/js",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/router"
+	],
+	"file_history":
+	[
+		"/C/Users/Administrator/Desktop/vue-server/vue/build/webpack.base.conf.js",
+		"/C/Users/Administrator/Desktop/vue-server/vue/build/webpack.dev.conf.js",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/assets/css/commen.less",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/assets/css/index.css",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/api/api.js",
+		"/F/wamp/www/servpro/dds/inc/head.inc.php",
+		"/F/wamp/www/servpro/dds/css/main.css",
+		"/F/wamp/www/servpro/dds/js/main.js",
+		"/F/wamp/www/servpro/dds/index.php",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/components/backend.vue",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/components/person.vue",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/assets/css/main.less",
+		"/C/Users/Administrator/Desktop/vue-server/vue/index.html",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/views/index.vue",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/components/app.vue",
+		"/F/wamp/www/huifankeji/js/product.js",
+		"/F/wamp/www/huifankeji/css/index.css",
+		"/F/wamp/www/huifankeji/css/index.less",
+		"/F/wamp/www/huifankeji/product.html",
+		"/F/wamp/www/huifankeji/collect.html",
+		"/F/wamp/www/huifankeji/index.html",
+		"/F/wamp/www/huifankeji/js/collect.js",
+		"/F/wamp/www/huifankeji/more.html",
+		"/F/wamp/www/huifankeji/js/more.js",
+		"/F/wamp/www/huifankeji/js/index.js",
+		"/F/wamp/www/汇帆科技/js/index.js",
+		"/F/wamp/www/汇帆科技/css/index.less",
+		"/F/wamp/www/汇帆科技/more.html",
+		"/F/wamp/www/汇帆科技/index.html",
+		"/C/Users/Administrator/Desktop/汇帆科技/index.html",
+		"/C/Users/Administrator/Desktop/汇帆科技/more.html",
+		"/C/Users/Administrator/Desktop/汇帆科技/css/index.less",
+		"/C/Users/Administrator/Desktop/汇帆科技/js/index.js",
+		"/F/job/fullpage/index.html",
+		"/C/Users/Administrator/Desktop/汇帆科技/css/more.less",
+		"/C/Users/Administrator/Desktop/汇帆科技/css/more.css",
+		"/E/我的工具/fullpage/fullpage-依赖jquery库 demo/index.html",
+		"/E/我的工具/fullpage/fullpage-依赖jquery库 demo/js/comm.js",
+		"/C/Users/Administrator/Desktop/汇帆科技/css/index.css",
+		"/C/Users/Administrator/Desktop/bootstrap/index.html",
+		"/C/Users/Administrator/Desktop/vue/vue/src/App.vue",
+		"/C/Users/Administrator/Desktop/vue/vue/src/components/vuex.vue",
+		"/C/Users/Administrator/Desktop/vue/vue/index.html",
+		"/C/Users/Administrator/Desktop/vue/vue/src/store/index.js",
+		"/C/Users/Administrator/Desktop/vue/vue/src/router/index.js",
+		"/C/Users/Administrator/Desktop/vue/vue/src/main.js",
+		"/C/Users/Administrator/Desktop/vue/vue/package.json",
+		"/E/站点/3dnav.html",
+		"/E/站点/祖玛游戏/bullet.js",
+		"/E/站点/祖玛游戏/ball.js",
+		"/E/站点/祖玛游戏/祖玛.html",
+		"/E/站点/祖玛游戏/111.js",
+		"/E/job/vue/index.html",
+		"/E/job/webpk/package.json",
+		"/E/job/job2/main.css",
+		"/E/job/job3/main.css",
+		"/E/job/webpk/js/index.js",
+		"/E/job/vue/vue.js",
+		"/E/nodejs/node_modules/npm/package.json",
+		"/E/站点/案例1/css/main.css",
+		"/E/job/es6/index.html",
+		"/E/job/es6/src/main.js",
+		"/E/job/es6/css",
+		"/E/job/es6/images",
+		"/E/站点/扫雷/main.js",
+		"/E/站点/扫雷/main.css",
+		"/E/job/job1/case2.html",
+		"/E/job/job5/jquery.fullPage.css",
+		"/E/job/job7/test.html",
+		"/E/job/test.html",
+		"/E/job/《移动端开发深度揭秘》系列公开课/《移动端开发深度揭秘》20161111课件/index.html",
+		"/E/站点/3d图形/3d图形最终版.html",
+		"/E/Sublime Text/Data/Packages/User/Default (Windows).sublime-keymap",
+		"/E/job/《移动端开发深度揭秘》系列公开课/《移动端开发深度揭秘》20161111课件/rem.html",
+		"/E/job/job3/index.html",
+		"/E/站点/1.js",
+		"/F/wamp/www/motion.html",
+		"/F/wamp/www/phone/drag.html",
+		"/F/wamp/www/phone/dds1.html",
+		"/E/job/《移动端开发深度揭秘》系列公开课/《移动端开发深度揭秘》20161111课件/css/index.less",
+		"/E/job/《移动端开发深度揭秘》系列公开课/《移动端开发深度揭秘》20161111课件/css/index.css",
+		"/F/wamp/www/phone/job1/index.html",
+		"/F/wamp/www/phone/job1/css/index.less",
+		"/F/wamp/www/phone/job1/css/index.css",
+		"/E/job/《移动端开发深度揭秘》系列公开课/《移动端开发深度揭秘》20161111课件/bs/css/bootstrap.css",
+		"/F/wamp/www/phone/job1/bs",
+		"/C/Users/Administrator/Downloads/《移动端开发深度揭秘》20170120课件/1_图片旋转和缩放综合实例.html",
+		"/E/fullpage/fullpage-依赖jquery库 demo/css/layout.css",
+		"/E/fullpage/fullpage-依赖jquery库 demo/css/style.css",
+		"/F/wamp/www/phone/index.html",
+		"/F/wamp/www/站点/index.html",
+		"/E/job/job7/dds.html",
+		"/F/wamp/bin/apache/apache2.4.9/conf/httpd.conf",
+		"/D/www/index.html",
+		"/F/wamp/www/index.php",
+		"/C/xampp/apache/conf/httpd.conf",
+		"/E/job/phone/drag.html",
+		"/E/Sublime Text/Data/Packages/Default/Default (Windows).sublime-keymap",
+		"/E/job/job7/js/jquery-1.8.3.min.js",
+		"/E/job/job6/dds.html",
+		"/C/Users/Administrator/Desktop/手机触摸响应/m.html",
+		"/E/job/dds2.html",
+		"/E/job/dds.html",
+		"/E/job/dds",
+		"/E/job/dds4.html",
+		"/E/job/dds3.html",
+		"/E/job/job6/index.html",
+		"/E/job/job6/dds2.html",
+		"/E/job/job6/333.html",
+		"/C/Users/Administrator/Desktop/手机触摸响应/jquery.min.js",
+		"/E/job/job5/index.html",
+		"/H/手机用户中心/zy/index.html",
+		"/E/不依赖的fullpag/index.html",
+		"/H/手机触摸响应/m.html",
+		"/H/手机触摸响应/jk.html",
+		"/H/手机用户中心/zy/css/layout.css",
+		"/E/fullpage/fullpage-依赖jquery库 demo/js/jquery.fullPage.js",
+		"/E/job/job5/jquery-2.0.3.js",
+		"/E/不依赖的fullpag/autoPlay.html",
+		"/E/不依赖的fullpag/js/fullPage.min.js",
+		"/E/fullpage/fullpage -不依赖任何库 demo/comm.js",
+		"/E/job/job3/main.js",
+		"/E/job/job4/index.html",
+		"/E/job/job2/index.html",
+		"/E/job/job4/jquery-2.0.3.js",
+		"/E/fullpage/fullpage-依赖jquery库 demo/js/comm.js",
+		"/E/fullpage/fullpage-依赖jquery库 demo/js/jk.js",
+		"/G/站点/案例1/css/main.css"
+	],
+	"find":
+	{
+		"height": 45.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"api",
+			"jQuery",
+			"php",
+			"login.php",
+			"php",
+			"146",
+			"background: linear-gradient(90deg,#ffd449 0,#ff9c00 100%);",
+			"overflow-y",
+			");",
+			"Deny from",
+			"http://",
+			"80",
+			"Documentroot",
+			"#",
+			"#typ",
+			"#type",
+			"obq",
+			"it",
+			"num",
+			"transform",
+			"(0deg",
+			"90",
+			"Y",
+			"X",
+			"“",
+			"container",
+			"conta",
+			"setIn",
+			"animate",
+			".append",
+			"appen",
+			"ctrl+shift+[",
+			"ctrl+shift+l",
+			"is_dir",
+			"ctrl+alt+a",
+			"f2",
+			"ctrl+alt+h",
+			"f12"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/Users/Administrator/Desktop/vue-server/vue/package.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1761,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								319,
+								319
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JSON (JavaScriptNext).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 261.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/Administrator/Desktop/vue-server/vue/build/dev-server.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2577,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1765,
+								1765
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2001.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/Administrator/Desktop/vue-server/vue/build/webpack.base.conf.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1679,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								760,
+								760
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 261.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/Administrator/Desktop/vue-server/vue/build/webpack.dev.conf.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1337,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1313,
+								1313
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 348.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "main.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 625,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								155,
+								140
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "router/index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 642,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								136,
+								136
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8818,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1961,
+								8598
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/vue-syntax-highlight-master/vue.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 11861.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "assets/css/main.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2509,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								849,
+								849
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/LESS/LESS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "components/index.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 281,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								244,
+								244
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/vue-syntax-highlight-master/vue.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 37.0
+	},
+	"input":
+	{
+		"height": 48.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "vues.sublime-project",
+	"replace":
+	{
+		"height": 70.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "hui",
+		"selected_items":
+		[
+			[
+				"hui",
+				"F:\\wamp\\www\\huifankeji\\huifan.sublime-project"
+			],
+			[
+				"hu",
+				"F:\\wamp\\www\\huifankeji\\huifan.sublime-project"
+			],
+			[
+				"v",
+				"C:\\Users\\Administrator\\Desktop\\vue\\vue\\src\\router\\vue.sublime-project"
+			],
+			[
+				"",
+				"F:\\wamp\\www\\anjile\\css\\job.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 219.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

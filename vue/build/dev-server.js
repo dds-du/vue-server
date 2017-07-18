@@ -55,6 +55,13 @@ app.use(require('connect-history-api-fallback')())
 // serve webpack bundle output
 app.use(devMiddleware)
 
+//接口
+app.get('/api.js',(req,res,next)=>{
+  res.end('0')
+})
+app.post('/api.js',(req,res,next)=>{
+  res.end('0')
+})
 // enable hot-reload and state-preserving
 // compilation error display
 app.use(hotMiddleware)

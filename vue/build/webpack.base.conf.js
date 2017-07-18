@@ -19,10 +19,12 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json','.css','.less'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
+      '@': resolve('src'),
+      '@lib':path.join(__dirname,'..','src','libs'),
+      'jquery':path.join(__dirname,'..','src','libs','js','jquery.min-3.1.1.js')
     }
   },
   module: {
