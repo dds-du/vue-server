@@ -32,28 +32,39 @@ let message = (resolve)=>{
 
 Vue.use(Router)
 
-export default new Router({
+
+let router = new Router({
 	mode:'history',
 	linkActiveClass:'active',
     routes: [
       {
         path: '/index',
         name: 'Index',
+        meta:{
+
+        },
         component: Index
       },
       {
       	path:'/person',
       	name:'Person',
+        meta:{
+          title:'个人主页'
+        },
       	component:person
       },
       {
         path:'/admin',
         name:'Admin',
+
         component:admin
       },
       {
         path:'/error',
         name:'Error',
+        meta:{
+          title:'错误页面'
+        },
          meta:{
           error:true
         },
@@ -62,21 +73,33 @@ export default new Router({
       {
         path:'/saolei',
         name:'Saolei',
+        meta:{
+          title:'扫雷游戏'
+        },
         component:saolei
       },
       {
         path:'/3dshow',
         name:'Show3d',
+        meta:{
+          title:'3d酷炫图形'
+        },
         component:show3d
       },
       {
         path:'/zuma',
         name:'Zuma',
+        meta:{
+          title:'祖玛游戏'
+        },
         component:zuma
       },
        {
         path:'/message',
         name:'Message',
+        meta:{
+          title:'留言板'
+        },
         component:message
       },
       {
@@ -99,3 +122,8 @@ export default new Router({
       }
     ]
 })
+
+router.afterEach((to,from,next)=>{
+    window.document.title=to.meta.title||'DDS个人主页'
+})
+export default router

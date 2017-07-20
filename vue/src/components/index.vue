@@ -72,6 +72,7 @@ function init(){
 			document.getElementById('mask').style.display = 'block';
 		}
 	}
+	
 	$(function(){//调整头部字的数量
 		head();
 		function head(){

@@ -80,7 +80,7 @@ function init(){
 
 	//提交按钮
 	$('.txt .btn1').click(function(){
-		$txtara = $('.txt textarea');
+		var $txtara = $('.txt textarea');
 		if($txtara.val() != ''){
 			txt = $txtara.val();
 			$('.item p').html($txtara.val());

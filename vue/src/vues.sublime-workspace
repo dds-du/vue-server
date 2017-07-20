@@ -339,7 +339,7 @@
 			"file": "/C/Users/Administrator/Desktop/vue-server/vue/package.json",
 			"settings":
 			{
-				"buffer_size": 1783,
+				"buffer_size": 1807,
 				"line_ending": "Unix"
 			}
 		},
@@ -352,26 +352,10 @@
 			}
 		},
 		{
-			"file": "/C/Users/Administrator/Desktop/vue-server/vue/build/server.js",
-			"settings":
-			{
-				"buffer_size": 229,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Administrator/Desktop/vue-reader/package.json",
-			"settings":
-			{
-				"buffer_size": 1931,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "router/index.js",
 			"settings":
 			{
-				"buffer_size": 1888,
+				"buffer_size": 2320,
 				"line_ending": "Unix"
 			}
 		},
@@ -384,18 +368,50 @@
 			}
 		},
 		{
-			"file": "app.vue",
+			"contents": "let express = require('express')\nlet router = express.Router()\n\n\nrouter.get('/sure',(req,res)=>{\n	//console.log(req)\n	res.setHeader('content-type:image/png;charset:utf-8;')\n	var sure = '';\n	for(var i=0;i<4;i++){\n		sure += Math.floor(Math.random()*16).toString(16)\n	}\n	\n\n	res.end('0')\n})\n\nrouter.post('/userInfo',(req,res)=>{\n	//console.log(req)\n	res.end('1')\n})\nrouter.post('/name',(req,res)=>{\n	//console.log(req)\n	res.end('1')\n})\nrouter.post('/init',(req,res)=>{\n	//console.log(req)\n	res.end('1')\n})\nrouter.post('/sureIn',(req,res)=>{\n	//console.log(req)\n	res.end('1')\n})\nrouter.post('/login',(req,res)=>{\n	//console.log(req)\n	res.end('1')\n})\nrouter.post('/reg',(req,res)=>{\n	//console.log(req)\n	res.end('1')\n})\nrouter.post('/quit',(req,res)=>{\n	//console.log(req)\n	res.end('1')\n})\nrouter.post('/msg',(req,res)=>{\n	//console.log(req)\n	res.end('1')\n})\nrouter.post('/leav',(req,res)=>{\n	//console.log(req)\n	res.end('1')\n})\n\n\nmodule.exports = router",
+			"file": "/C/Users/Administrator/Desktop/vue-server/vue/build/server.js",
+			"file_size": 945,
+			"file_write_time": 131449931204170018,
 			"settings":
 			{
-				"buffer_size": 9393,
+				"buffer_size": 948,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "<template>\n	<div class=\"main_wrap\" id=\"dds_index\">\n		<div id=\"box\">\n			<ul id=\"wrap\">\n				<router-link to=\"/saolei\" tag=\"li\">\n					<img src=\"/static/img/tim.jpg\" alt=\"\">\n					<div class=\"mask\"></div>\n				</router-link>\n				<router-link to=\"/3dshow\" tag=\"li\">\n					<img src=\"/static/img/star.png\" alt=\"\">\n					<div class=\"mask\"></div>\n				</router-link>\n				<router-link to=\"/zuma\" tag=\"li\">\n					<img src=\"/static/img/zuma.jpg\" alt=\"\">\n					<div class=\"mask\"></div>\n				</router-link>\n				<router-link to=\"/saolei\" tag=\"li\">\n					<img src=\"/static/img/pic.jpg\" alt=\"\">\n					<div class=\"mask\"></div>\n				</router-link>\n				<router-link to=\"/saolei\" tag=\"li\">\n					<img src=\"/static/img/case2/food1.png\" alt=\"\">\n					<div class=\"mask\"></div>\n				</router-link>\n				<router-link to=\"/saolei\" tag=\"li\">\n					<img src=\"/static/img/case3/bg1.jpg\" alt=\"\">\n					<div class=\"mask\"></div>\n				</router-link>\n				<router-link to=\"/saolei\" tag=\"li\">\n					<img src=\"/static/img/1.jpg\" alt=\"\">\n					<div class=\"mask\"></div>\n				</router-link>\n				<router-link to=\"/sign\" tag=\"li\">\n					<img src=\"/static/img/360.jpg\" alt=\"\">\n					<div class=\"mask\"></div>\n				</router-link>\n				<router-link to=\"/other\" tag=\"li\">\n					<img src=\"/static/img/520.jpg\" alt=\"\">\n					<div class=\"mask\"></div>\n				</router-link>\n			</ul>\n		</div>\n		<div id=\"mask\">\n			<p>\n				对不起，您的浏览器版本过低，请升级您的浏览器或者使用标准浏览器，如：谷歌浏览器打开本站，对您造成的不便相当抱歉！！！\n			</p>\n		</div>\n		<router-link id=\"toMsg\" to=\"/message\">留言板</router-link>\n		<audio id=\"audio1\" src=\"/static/media/zenyang.mp3\" preload=\"false\"></audio>\n	</div>\n</template>\n\n<script>\nfunction init(){\n\n	if (document.attachEvent) {\n		document.attachEvent('onreadystatechange', function () {\n	        if(document.readyState==\"complete\") {\n	            document.detachEvent(\"onreadystatechange\", arguments.callee);\n	     		callback();\n	   		}\n		})\n	}else if (document.lastChild == document.body) {\n	    callback();\n	}\n\n	function callback(){\n		//在ie6789下，拒绝访问\n		var user = navigator.userAgent;\n		\n		if(/IE [6789]/.test(user)){\n			document.getElementById('mask').style.display = 'block';\n		}\n	}\n	\n	$(function(){//调整头部字的数量\n		head();\n		function head(){\n			if(document.body.clientWidth<900){\n				$('#header').find('h1').html('欢迎');\n			}else if(document.body.clientWidth<1600){\n				$('#header').find('h1').html('欢迎大家来到DDS的个人站');\n			}else{\n				$('#header').find('h1').html('欢迎大家来到DDS的个人站！点击下面的图片，可以发现一些新东西哦!');\n			}\n		}\n		window.onresize=head;\n	});\n\n	var oBox = document.getElementById('box');\n	var aImg = oBox.getElementsByTagName('li');\n	var rap = document.getElementById('wrap');\n	var timer = null;\n	var rapRot = 0;\n	var onoff = true;\n\n	var len = aImg.length;\n	for (var i = 0; i < len; i++) {\n		aImg[i].style.transition = '2s '+ .5*i +'s';\n		aImg[i].index = i;\n	}\n	for (var i = 0; i < len; i++) {\n		coor(aImg[i],i);\n	}\n	\n	function coor(obj,i){//计算角度，确定位置与偏移量\n		var r = 300;\n\n		obj.style.transform = 'translateX('+ (r*Math.cos(2*Math.PI/len*i)+390) +'px) translateZ('+ r*Math.sin(2*Math.PI/len*i) +'px) rotateY('+ (2*Math.PI/len*(len-i)+Math.PI/2) +'rad)  rotateX(0rad)';\n	}	\n	\n	\n	//判定初始化时鼠标是否在图片墙内\n	rap.addEventListener('mouseenter',ent);\n	rap.addEventListener('mouseleave',lea);\n	function ent () {\n		onoff = false;\n	}\n	function lea () {\n		onoff = true;\n	}\n\n	\n	aImg[len-1].addEventListener('transitionend',init);\n	function init(){//页面初始化\n		for (var i = 0; i < len; i++) {\n			aImg[i].style.transition = 'none';\n		}\n		aImg[len-1].removeEventListener('transitionend',init);	\n		\n		rap.onmouseover = function(ev){//移入停止旋转\n			if(ev.target.nodeName==='DIV'){\n				ev.target.style.opacity = 0;\n			}	\n			clearInterval(timer);\n		}\n\n		rap.onmouseout = function(ev){//移出开始旋转\n			if(ev.target.nodeName==='DIV'){\n				ev.target.style.opacity = '.2';\n			}	\n			timer = setInterval(function(){\n				rapRot -= 1;\n				rap.style.transform = 'rotateY('+ rapRot +'deg)';\n			},30);\n		}\n		\n		/*rap.onclick = function(ev){//点击效果\n			if(ev.target.nodeName==='DIV'){\n				var loop =  ev.target.parentNode.index;\n				console.log(loop);\n				switch (loop) {\n					case 0:\n						window.open('/saolei','_self');\n						break;\n					case 1:\n						window.open('/3dshow','_self');\n						break;\n					case 2:\n						window.open('/zuma','_self');\n						break;\n					case 3:\n						window.open('/case1','_self');\n						break;\n					case 4:\n						window.open('/case2','_self');\n						break;\n					case 5:\n						window.open('case3.html','_self');\n						break;\n					case 6:\n						window.open('sign.html','_self');\n						break;\n					case 7:\n						window.open('timeofserver.html','_self');\n						break;\n					case 8:\n						window.open('360sign');\n						break;\n					case 9:\n						window.open('other.html');\n						break;\n				}\n				\n			}	\n		}*/\n		if(onoff){//在图片位置确定后旋转图片墙\n			timer = setInterval(function(){\n				rapRot -= 1;\n				rap.style.transform = 'rotateY('+ rapRot +'deg)';\n			},30);\n		}\n		rap.removeEventListener('mouseenter',ent);\n		rap.removeEventListener('mouseleave',ent);\n	}\n\n	var zy = document.getElementById('audio1');\n	zy.play();\n}\nexport default {\n mounted(){\n 	setTimeout(init,50)\n }\n}\n</script>\n\n<style>\n#dds_index {background: url(/static/img/star2.jpg);}\n\n</style>",
+			"file": "/F/wamp/www/servpro/dds/sure.php",
+			"settings":
+			{
+				"buffer_size": 612,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app.vue",
+			"settings":
+			{
+				"buffer_size": 9542,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "components/message.vue",
+			"settings":
+			{
+				"buffer_size": 1340,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "assets/css/saolei.less",
+			"settings":
+			{
+				"buffer_size": 2447,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "components/index.vue",
-			"file_size": 5675,
-			"file_write_time": 131449243264063410,
 			"settings":
 			{
 				"buffer_size": 5111,
@@ -460,14 +476,19 @@
 		"/C/Users/Administrator/Desktop/vue-server/vue/build",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/assets",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/assets/css",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/assets/js",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/components",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/router"
 	],
 	"file_history":
 	[
-		"/C/Users/Administrator/Desktop/vue-reader/build/dev-server.js",
+		"/C/Users/Administrator/Desktop/mynode/app.js",
+		"/C/Users/Administrator/Desktop/vue-server/vue/build/test.js",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/assets/css/zuma.less",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/components/3d.vue",
 		"/C/Users/Administrator/Desktop/vue-reader/package.json",
+		"/C/Users/Administrator/Desktop/vue-reader/build/dev-server.js",
 		"/C/Users/Administrator/Desktop/vue-server/vue/build/get.js",
 		"/C/Users/Administrator/Desktop/vue-server/vue/build/post.js",
 		"/F/wamp/www/servpro/dds/userAgent.php",
@@ -485,8 +506,6 @@
 		"/F/wamp/www/servpro/dds/css/message.css",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/components/saolei.vue",
 		"/C/Users/Administrator/Desktop/成都网站建设公.html",
-		"/C/Users/Administrator/Desktop/vue-server/vue/src/assets/css/zuma.less",
-		"/C/Users/Administrator/Desktop/vue-server/vue/src/components/3d.vue",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/components/other.vue",
 		"/C/Users/Administrator/Desktop/vue-server/vue/index.html",
 		"/F/wamp/www/servpro/dds/other.html",
@@ -510,7 +529,6 @@
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/assets/js/saolei.js",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/assets/css/index.css",
 		"/F/wamp/www/servpro/dds/js/saolei.js",
-		"/C/Users/Administrator/Desktop/mynode/app.js",
 		"/F/wamp/www/servpro/dds/css/index.css",
 		"/F/wamp/www/servpro/dds/js/index.js",
 		"/F/wamp/www/servpro/dds/js/main.js",
@@ -592,8 +610,7 @@
 		"/E/job/《移动端开发深度揭秘》系列公开课/《移动端开发深度揭秘》20161111课件/css/index.less",
 		"/E/job/《移动端开发深度揭秘》系列公开课/《移动端开发深度揭秘》20161111课件/css/index.css",
 		"/F/wamp/www/phone/job1/index.html",
-		"/F/wamp/www/phone/job1/css/index.less",
-		"/F/wamp/www/phone/job1/css/index.css"
+		"/F/wamp/www/phone/job1/css/index.less"
 	],
 	"find":
 	{
@@ -611,6 +628,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"line-height: 100px",
 			"api",
 			"document",
 			"img/",
@@ -683,7 +701,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -692,7 +710,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1783,
+						"buffer_size": 1807,
 						"regions":
 						{
 						},
@@ -714,7 +732,7 @@
 						"translation.y": 261.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -745,82 +763,24 @@
 						"translation.y": 522.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "/C/Users/Administrator/Desktop/vue-server/vue/build/server.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 229,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								63,
-								63
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/C/Users/Administrator/Desktop/vue-reader/package.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1931,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JSON (JavaScriptNext).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 609.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
 					"file": "router/index.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1888,
+						"buffer_size": 2320,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1530,
-								1530
+								2266,
+								2266
 							]
 						],
 						"settings":
@@ -831,14 +791,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1653.0,
+						"translation.y": 2907.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 3,
 					"file": "main.js",
 					"semi_transient": false,
 					"settings":
@@ -863,7 +823,67 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/Administrator/Desktop/vue-server/vue/build/server.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 948,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								211,
+								211
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 174.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/F/wamp/www/servpro/dds/sure.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 612,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								59,
+								59
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -872,15 +892,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9393,
+						"buffer_size": 9542,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8894,
-								8894
+								2275,
+								2275
 							]
 						],
 						"settings":
@@ -890,7 +910,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4002.0,
+						"translation.y": 819.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 7,
@@ -898,6 +918,66 @@
 				},
 				{
 					"buffer": 7,
+					"file": "components/message.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1340,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								978,
+								978
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/vue-syntax-highlight-master/vue.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 609.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "assets/css/saolei.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2447,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2055,
+								2055
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
 					"file": "components/index.vue",
 					"semi_transient": false,
 					"settings":
@@ -909,8 +989,8 @@
 						"selection":
 						[
 							[
-								2088,
-								2088
+								4655,
+								4655
 							]
 						],
 						"settings":
@@ -920,10 +1000,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3219.0,
+						"translation.y": 551.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -960,6 +1040,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 184.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0
@@ -983,9 +1067,17 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "no",
+		"last_filter": "v",
 		"selected_items":
 		[
+			[
+				"v",
+				"C:\\Users\\Administrator\\Desktop\\vue\\vue\\src\\router\\vue.sublime-project"
+			],
+			[
+				"huif",
+				"F:\\wamp\\www\\huifankeji\\huifan.sublime-project"
+			],
 			[
 				"no",
 				"F:\\mynode\\node.sublime-workspace"
@@ -997,10 +1089,6 @@
 			[
 				"hui",
 				"F:\\wamp\\www\\huifankeji\\huifan.sublime-project"
-			],
-			[
-				"v",
-				"C:\\Users\\Administrator\\Desktop\\vue\\vue\\src\\router\\vue.sublime-project"
 			],
 			[
 				"hu",

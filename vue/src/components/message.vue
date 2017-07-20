@@ -16,7 +16,7 @@
 function init(){
 	var dat = {};
 	$.ajax({
-		url:'/api',
+		url:'/api/msg',
 		type:'POST',
 		async:false,
 		dataType:'json',
@@ -44,7 +44,7 @@ function init(){
 			return;
 		}
 		$.ajax({
-			url:'/api',
+			url:'/api/leav',
 			type:'POST',
 			dataType:'json',
 			data:{'index':'leav','text':msg},

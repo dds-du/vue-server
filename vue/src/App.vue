@@ -77,9 +77,17 @@ var passsure = false;
 var mailin = false;
 var surein = false;
 
-$(function(){//在页面初始化时判定登录状态
+//发送用户信息存储请求
+$.ajax({
+	url:'/api/userInfo',
+	type:'POST',
+	data:{index:'userInfo'}
+})
+
+//在页面初始化时判定登录状态
+$(function(){
 	$.ajax({
-		url:'api',
+		url:'/api/init',
 		dataType:'json',
 		type:'POST',
 		data:{'index':'init'},
@@ -119,7 +127,7 @@ $(function(){//弹出登录层
 	})
 
 	$('#sure').click(function(){
-		$(this).attr({src:'api?'+Date.now()});
+		$(this).attr({src:'/api/sure?'+Date.now()});
 	});
 
 
@@ -175,7 +183,7 @@ $(function(){//用户名验证
 		}else{
 			if(state=='reg'){
 				$.ajax({
-					url:'api',
+					url:'/api/name',
 					type:'POST',
 					data:{'index':'usersure','username':val},
 					success:function(data){
@@ -242,14 +250,14 @@ $(function(){//登录
 				clear();
 			}else{
 				$.ajax({
-					url:'api',
+					url:'/api/sureIn',
 					type:'POST',
 					data:{'index':'sure','code':sure},
 					success:function(data){
 						var dt = parseInt(data);
 						if(dt==0){
 							$.ajax({
-								url:'api',
+								url:'/api/login',
 								type:'POST',
 								data:{'index':'log','username':user,'password':pass},
 								dataType:'json',
@@ -260,9 +268,6 @@ $(function(){//登录
 									}else{
 										alert('用户名或者密码错误');
 										clear();
-									
-										
-									
 									}
 								}
 							});
@@ -332,7 +337,7 @@ $(function(){//注册
 					var sure = $('#sure_text').val();
 					var sex = $('#sex')[0].checked?1:0;
 					$.ajax({
-						url:'api',
+						url:'/api/reg',
 						type:'POST',
 						data:{'index':'sure','code':sure},
 						success:function(data){
@@ -393,7 +398,7 @@ function quit(){//退出
 	$('#pass').val('');
 	$('#sure').trigger('click');
 	$.ajax({
-		url:'api',
+		url:'/api/quit',
 		type:'POST',
 		data:{'index':'quit'},
 		dataType:'json',
@@ -449,5 +454,6 @@ export default {
 .v-leave-to {opacity: 0;}
 .v-leave-active {transition: .5s;}
 
-#backIndex {height: 40px;line-height: 40px;width: 100px;text-align: center;color: yellow;position: absolute;left: 250px;top: 0;background-color: red;border-radius: 20px;}
+#backIndex {height: 40px;line-height: 40px;width: 100px;text-align: center;color: #fff;position: absolute;left: 250px;top: 20px;background-color: #3F0B59;border-radius: 20px;opacity: .8;}
+#backIndex:hover {opacity: 1;}
 </style>
