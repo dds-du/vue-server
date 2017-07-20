@@ -4,6 +4,7 @@ let router = express.Router()
 
 router.get('/sure',(req,res)=>{
 	//console.log(req)
+	res.setHeader('content-type:image/png;charset:utf-8;')
 	var sure = '';
 	for(var i=0;i<4;i++){
 		sure += Math.floor(Math.random()*16).toString(16)
