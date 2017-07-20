@@ -45,7 +45,7 @@
 				对不起，您的浏览器版本过低，请升级您的浏览器或者使用标准浏览器，如：谷歌浏览器打开本站，对您造成的不便相当抱歉！！！
 			</p>
 		</div>
-		<a id="toMsg" href="message.php" target="_blank">留言板</a>
+		<router-link id="toMsg" to="/message">留言板</router-link>
 		<audio id="audio1" src="/static/media/zenyang.mp3" preload="false"></audio>
 	</div>
 </template>
@@ -204,6 +204,6 @@ export default {
 </script>
 
 <style>
-.main_wrap {background: url(/static/img/star2.jpg);}
+#dds_index {background: url(/static/img/star2.jpg);}
 
 </style>

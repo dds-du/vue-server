@@ -247,5 +247,5 @@ export default {
 </script>
 
 <style>
-body {background: url(/static/img/boom.jpg);}
+#saolei_wrap {background: url(/static/img/boom.jpg);}
 </style>

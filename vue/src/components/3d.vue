@@ -389,7 +389,7 @@ function init(){
 }
 export default {
  mounted(){
- 	setTimeout(init,1000)
+ 	setTimeout(init,100)
  }
 }
 </script>

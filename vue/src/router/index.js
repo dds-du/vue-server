@@ -26,6 +26,9 @@ let zuma = (resolve)=>{
 let other = (resolve)=>{
   return import ('@/components/other')
 }
+let message = (resolve)=>{
+  return import ('@/components/message')
+}
 
 Vue.use(Router)
 
@@ -70,6 +73,11 @@ export default new Router({
         path:'/zuma',
         name:'Zuma',
         component:zuma
+      },
+       {
+        path:'/message',
+        name:'Message',
+        component:message
       },
       {
         path:'/other',

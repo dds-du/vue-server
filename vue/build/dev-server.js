@@ -22,14 +22,18 @@ var proxyTable = config.dev.proxyTable
 
 var app = express()
 
-app.use('',express.static(__dirname+'../src/assets/'))
+/*let sql = mysql.createConnection({
+  host:'localhost',
+  user:'root',
+  password:'',
+  database:'dds'
+})*/
 //接口
-app.get('/api',(req,res,next)=>{
+app.use('/api',require('./server'))
+/*app.post('/api',(req,res,next)=>{
+  //console.log(req)
   res.end('0')
-})
-app.post('/api',(req,res,next)=>{
-  res.end('0')
-})
+})*/
 
 var compiler = webpack(webpackConfig)
 
