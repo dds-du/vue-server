@@ -29,7 +29,7 @@ var app = express()
   database:'dds'
 })*/
 //接口
-app.use('/api',require('./server'))
+app.use('/api',require('./../dist/server.js'))
 /*app.post('/api',(req,res,next)=>{
   //console.log(req)
   res.end('0')

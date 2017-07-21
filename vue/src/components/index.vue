@@ -30,7 +30,7 @@
 					<img src="/static/img/1.jpg" alt="">
 					<div class="mask"></div>
 				</router-link>
-				<router-link to="/sign" tag="li">
+				<router-link to="/other" tag="li">
 					<img src="/static/img/360.jpg" alt="">
 					<div class="mask"></div>
 				</router-link>
@@ -72,20 +72,6 @@ function init(){
 			document.getElementById('mask').style.display = 'block';
 		}
 	}
-	
-	$(function(){//调整头部字的数量
-		head();
-		function head(){
-			if(document.body.clientWidth<900){
-				$('#header').find('h1').html('欢迎');
-			}else if(document.body.clientWidth<1600){
-				$('#header').find('h1').html('欢迎大家来到DDS的个人站');
-			}else{
-				$('#header').find('h1').html('欢迎大家来到DDS的个人站！点击下面的图片，可以发现一些新东西哦!');
-			}
-		}
-		window.onresize=head;
-	});
 
 	var oBox = document.getElementById('box');
 	var aImg = oBox.getElementsByTagName('li');
@@ -145,45 +131,6 @@ function init(){
 			},30);
 		}
 		
-		/*rap.onclick = function(ev){//点击效果
-			if(ev.target.nodeName==='DIV'){
-				var loop =  ev.target.parentNode.index;
-				console.log(loop);
-				switch (loop) {
-					case 0:
-						window.open('/saolei','_self');
-						break;
-					case 1:
-						window.open('/3dshow','_self');
-						break;
-					case 2:
-						window.open('/zuma','_self');
-						break;
-					case 3:
-						window.open('/case1','_self');
-						break;
-					case 4:
-						window.open('/case2','_self');
-						break;
-					case 5:
-						window.open('case3.html','_self');
-						break;
-					case 6:
-						window.open('sign.html','_self');
-						break;
-					case 7:
-						window.open('timeofserver.html','_self');
-						break;
-					case 8:
-						window.open('360sign');
-						break;
-					case 9:
-						window.open('other.html');
-						break;
-				}
-				
-			}	
-		}*/
 		if(onoff){//在图片位置确定后旋转图片墙
 			timer = setInterval(function(){
 				rapRot -= 1;
@@ -197,10 +144,32 @@ function init(){
 	var zy = document.getElementById('audio1');
 	zy.play();
 }
+
+/*function headSet(){//调整头部字的数量
+	
+	//window.onresize=head;
+}*/
+
+function head(){
+	var dW = document.documentElement.getBoundingClientRect().width
+	if(dW<900){
+		$('#header').find('h1').html('欢迎');
+	}else if(dW<1600){
+		$('#header').find('h1').html('欢迎大家来到DDS的个人站');
+	}else{
+		$('#header').find('h1').html('欢迎大家来到DDS的个人站！点击下面的图片，可以发现一些新东西哦!');
+	}
+}
 export default {
- mounted(){
- 	setTimeout(init,50)
- }
+	mounted(){
+		setTimeout(init,50)
+		head()
+		$(window).on('resize.head',head)
+	},
+	destroyed(){
+		$(window).off('resize.head')
+		$('#header').find('h1').html('欢迎大家来到DDS的个人站');
+	}
 }
 </script>
 
