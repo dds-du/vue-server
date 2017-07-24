@@ -21,19 +21,12 @@ var autoOpenBrowser = !!config.dev.autoOpenBrowser
 var proxyTable = config.dev.proxyTable
 
 var app = express()
+let bodyParser = require('body-parser')
 
-/*let sql = mysql.createConnection({
-  host:'localhost',
-  user:'root',
-  password:'',
-  database:'dds'
-})*/
+app.use(bodyParser.urlencoded({ extended: false }))
+
 //接口
 app.use('/api',require('./../dist/server.js'))
-/*app.post('/api',(req,res,next)=>{
-  //console.log(req)
-  res.end('0')
-})*/
 
 var compiler = webpack(webpackConfig)
 

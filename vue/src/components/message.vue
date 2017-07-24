@@ -1,5 +1,5 @@
 <template>
-  <div class="main_wrap" id="message">
+  <div id="message">
     <div id="txt">
 		<div class="msg_head">
 			<textarea id="userinput" style="width: 900px;height: 150px;resize:none;"></textarea> 
@@ -20,7 +20,6 @@ function init(){
 		type:'POST',
 		async:false,
 		dataType:'json',
-		data:{'index':'msg'},
 		success:function(data){
 			dat=data;
 		},
@@ -30,7 +29,7 @@ function init(){
 	});
 	
 	for(var i=0;i<dat.length;i++){
-		$li = $('<li>').html('<h2><span>'+dat[i]['m_username']+'</span>说</h2><div class="msg_cont"><p>'+decodeURI(dat[i]['m_text'])+'</p><i>'+dat[i]['m_time']+'</i></div>');
+		let $li = $('<li>').html('<h2><span>'+dat[i]['m_username']+'</span>说</h2><div class="msg_cont"><p>'+decodeURI(dat[i]['m_text'])+'</p><i>'+dat[i]['m_time']+'</i></div>');
 		$li.prependTo($('.user_msg'));
 	}
 

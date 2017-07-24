@@ -1,15 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Index from '@/components/index'
-//import error from '@/components/error'
-//import Person from '@/components/person'
+import index from '@/components/index'
 
-let person = (resolve)=>{
-  return import ('@/components/person')
-}
+
 let admin = (resolve)=>{
-  return import ('@/components/backend')
+  return import ('@/components/admin')
 }
 let error = (resolve)=>{
   return import ('@/components/error')
@@ -29,9 +25,14 @@ let other = (resolve)=>{
 let message = (resolve)=>{
   return import ('@/components/message')
 }
+let control = (resolve)=>{
+  return import ('@/components/admin/control')
+}
+let person = (resolve)=>{
+  return import ('@/components/admin/person')
+}
 
 Vue.use(Router)
-
 
 let router = new Router({
 	mode:'history',
@@ -43,29 +44,39 @@ let router = new Router({
         meta:{
 
         },
-        component: Index
-      },
-      {
-      	path:'/person',
-      	name:'Person',
-        meta:{
-          title:'个人主页'
-        },
-      	component:person
+        component: index
       },
       {
         path:'/admin',
         name:'Admin',
-
-        component:admin
+        meta:{
+          admin:true
+        },
+        component:admin,
+        children:[
+          {
+            path:'/admin/control',
+            component:control,
+            name:'Control',
+            meta:{
+              admin:true
+            },
+          },
+           {
+            path:'/admin/person',
+            component:person,
+            name:'Person',
+            meta:{
+              admin:true
+            },
+          },
+        ]
       },
       {
         path:'/error',
         name:'Error',
-        meta:{
-          title:'错误页面'
-        },
          meta:{
+          title:'错误页面',
           error:true
         },
         component:error

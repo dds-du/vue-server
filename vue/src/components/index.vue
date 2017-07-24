@@ -1,5 +1,6 @@
 <template>
 	<div class="main_wrap" id="dds_index">
+		<button id="index_display">展开图片</button>
 		<div id="box">
 			<ul id="wrap">
 				<router-link to="/saolei" tag="li">
@@ -51,104 +52,7 @@
 </template>
 
 <script>
-function init(){
-
-	if (document.attachEvent) {
-		document.attachEvent('onreadystatechange', function () {
-	        if(document.readyState=="complete") {
-	            document.detachEvent("onreadystatechange", arguments.callee);
-	     		callback();
-	   		}
-		})
-	}else if (document.lastChild == document.body) {
-	    callback();
-	}
-
-	function callback(){
-		//在ie6789下，拒绝访问
-		var user = navigator.userAgent;
-		
-		if(/IE [6789]/.test(user)){
-			document.getElementById('mask').style.display = 'block';
-		}
-	}
-
-	var oBox = document.getElementById('box');
-	var aImg = oBox.getElementsByTagName('li');
-	var rap = document.getElementById('wrap');
-	var timer = null;
-	var rapRot = 0;
-	var onoff = true;
-
-	var len = aImg.length;
-	for (var i = 0; i < len; i++) {
-		aImg[i].style.transition = '2s '+ .5*i +'s';
-		aImg[i].index = i;
-	}
-	for (var i = 0; i < len; i++) {
-		coor(aImg[i],i);
-	}
-	
-	function coor(obj,i){//计算角度，确定位置与偏移量
-		var r = 300;
-
-		obj.style.transform = 'translateX('+ (r*Math.cos(2*Math.PI/len*i)+390) +'px) translateZ('+ r*Math.sin(2*Math.PI/len*i) +'px) rotateY('+ (2*Math.PI/len*(len-i)+Math.PI/2) +'rad)  rotateX(0rad)';
-	}	
-	
-	
-	//判定初始化时鼠标是否在图片墙内
-	rap.addEventListener('mouseenter',ent);
-	rap.addEventListener('mouseleave',lea);
-	function ent () {
-		onoff = false;
-	}
-	function lea () {
-		onoff = true;
-	}
-
-	
-	aImg[len-1].addEventListener('transitionend',init);
-	function init(){//页面初始化
-		for (var i = 0; i < len; i++) {
-			aImg[i].style.transition = 'none';
-		}
-		aImg[len-1].removeEventListener('transitionend',init);	
-		
-		rap.onmouseover = function(ev){//移入停止旋转
-			if(ev.target.nodeName==='DIV'){
-				ev.target.style.opacity = 0;
-			}	
-			clearInterval(timer);
-		}
-
-		rap.onmouseout = function(ev){//移出开始旋转
-			if(ev.target.nodeName==='DIV'){
-				ev.target.style.opacity = '.2';
-			}	
-			timer = setInterval(function(){
-				rapRot -= 1;
-				rap.style.transform = 'rotateY('+ rapRot +'deg)';
-			},30);
-		}
-		
-		if(onoff){//在图片位置确定后旋转图片墙
-			timer = setInterval(function(){
-				rapRot -= 1;
-				rap.style.transform = 'rotateY('+ rapRot +'deg)';
-			},30);
-		}
-		rap.removeEventListener('mouseenter',ent);
-		rap.removeEventListener('mouseleave',ent);
-	}
-
-	var zy = document.getElementById('audio1');
-	zy.play();
-}
-
-/*function headSet(){//调整头部字的数量
-	
-	//window.onresize=head;
-}*/
+import init from '@/assets/js/index'
 
 function head(){
 	var dW = document.documentElement.getBoundingClientRect().width
@@ -169,6 +73,11 @@ export default {
 	destroyed(){
 		$(window).off('resize.head')
 		$('#header').find('h1').html('欢迎大家来到DDS的个人站');
+	},
+	methods:{
+		displayPic(){
+
+		}
 	}
 }
 </script>

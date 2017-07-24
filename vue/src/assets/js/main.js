@@ -1,14 +1,70 @@
-//JavaScript
+function init (){
 var state = null;
 var userin = false;
 var passin = false;
 var passsure = false;
 var mailin = false;
 var surein = false;
+var main_sure = 0;
 
-$(function(){//在页面初始化时判定登录状态
+//发送用户信息存储请求
+$.ajax({
+	url:'/api/userInfo',
+	type:'POST',
+})
+
+//发送请求获取验证码cookie
+getSure()
+function getSure(){
 	$.ajax({
-		url:'api',
+		type:'GET',
+		url:'/api/sure',
+		success:function(data){
+			main_sure = Number(data)
+			$('#sure_pic').css({left:main_sure})
+		},
+		error:function(err){
+			alert(err)
+		}
+	})
+	surein = false
+	$('.sure p').html('拖动按钮使其拖动到图片重合').css({color:'yellow'})
+	$('#sure').css({left:0})
+}
+	
+//发送滑动验证码
+$(function(){
+	$('#sure').on('mousedown',function(ev){
+		var disX = ev.pageX
+		$(document).on('mousemove',function(ev){
+			var l = ev.pageX-disX
+			l=Math.min(l,200)
+			l=Math.max(l,0)
+			$('#sure').css({left:l})
+
+			return false
+		})
+
+		$(document).on('mouseup',function(ev){
+			$(document).off('mousemove').off('mouseup')
+			
+			Math.abs(parseInt($('#sure').css('left'))-main_sure)<5?fnSuc():fnErr()
+		})
+	})
+})
+function fnSuc(){
+	$('.sure p').html('恭喜您，验证成功').css({color:'#7bf6ac'})
+	surein=true
+}
+function fnErr(){
+	alert('对不起，验证失败')
+	window.location.reload()
+}
+
+//在页面初始化时判定登录状态
+$(function(){
+	$.ajax({
+		url:'/api/init',
 		dataType:'json',
 		type:'POST',
 		data:{'index':'init'},
@@ -23,7 +79,8 @@ $(function(){//在页面初始化时判定登录状态
 			}
 		}
 	})
-});
+})
+
 $(function(){//弹出登录层
 
 	$('#login').click(function(){
@@ -40,18 +97,12 @@ $(function(){//弹出登录层
 			$('#user').val(aaa);
 			$('.error_user').html('');
 		}
-		
+		getSure()
 
 	});
 	$('#log').find('.del').click(function(){
 		$('.log_mask').hide(200);
 	})
-
-	$('#sure').click(function(){
-		$(this).attr({src:'api?'+Date.now()});
-	});
-
-
 });
 
 $(function(){//注册层切换
@@ -68,6 +119,8 @@ $(function(){//注册层切换
 		$('#mail').val('');
 		$('#sure_text').val('');
 		$('.error_user').html('');
+
+		getSure()
 		
 	}); 
 	$('.reg_show').click(function(){
@@ -98,22 +151,22 @@ $(function(){//用户名验证
 		var val = $(this).val();
 		var re = /^[\w\u4e00-\u9fa5\.\+\-\*]{3,8}$/;
 		if(val==''){
-			$('.error_user').css({color:'red'}).html('用户名不能为空');
+			$('.error_user').css({color:'yellow'}).html('用户名不能为空');
 		}else if(!re.test(val)){
-			$('.error_user').css({color:'red'}).html('请输入3-8位用户名');
+			$('.error_user').css({color:'yellow'}).html('请输入3-8位用户名');
 		}else{
 			if(state=='reg'){
 				$.ajax({
-					url:'api',
+					url:'/api/name',
 					type:'POST',
-					data:{'index':'usersure','username':val},
+					data:{'username':val},
 					success:function(data){
 						var dt = parseInt(data);
 						if(dt==0){
 							$('.error_user').css({color:'green'}).html('恭喜您，该用户名可用');
 							userin = true;
 						}else{
-							$('.error_user').css({color:'red'}).html('对不起，该用户名已经注册');
+							$('.error_user').css({color:'yellow'}).html('对不起，该用户名已经注册');
 						}
 					}
 				});
@@ -171,14 +224,14 @@ $(function(){//登录
 				clear();
 			}else{
 				$.ajax({
-					url:'api',
+					url:'/api/sureIn',
 					type:'POST',
 					data:{'index':'sure','code':sure},
 					success:function(data){
 						var dt = parseInt(data);
 						if(dt==0){
 							$.ajax({
-								url:'api',
+								url:'/api/login',
 								type:'POST',
 								data:{'index':'log','username':user,'password':pass},
 								dataType:'json',
@@ -189,9 +242,6 @@ $(function(){//登录
 									}else{
 										alert('用户名或者密码错误');
 										clear();
-									
-										
-									
 									}
 								}
 							});
@@ -261,7 +311,7 @@ $(function(){//注册
 					var sure = $('#sure_text').val();
 					var sex = $('#sex')[0].checked?1:0;
 					$.ajax({
-						url:'api',
+						url:'/api/reg',
 						type:'POST',
 						data:{'index':'sure','code':sure},
 						success:function(data){
@@ -322,7 +372,7 @@ function quit(){//退出
 	$('#pass').val('');
 	$('#sure').trigger('click');
 	$.ajax({
-		url:'api',
+		url:'/api/quit',
 		type:'POST',
 		data:{'index':'quit'},
 		dataType:'json',
@@ -345,3 +395,6 @@ function clear(){//清空密码、确认密码、验证码的输入，刷新验�
 	$('#sure_text').val('');
 	$('#sure').trigger('click');
 }
+
+}
+export default init
