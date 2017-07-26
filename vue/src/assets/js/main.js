@@ -224,33 +224,20 @@ $(function(){//登录
 				clear();
 			}else{
 				$.ajax({
-					url:'/api/sureIn',
+					url:'/api/login',
 					type:'POST',
-					data:{'index':'sure','code':sure},
+					data:{'index':'log','username':user,'password':pass},
+					dataType:'json',
 					success:function(data){
-						var dt = parseInt(data);
-						if(dt==0){
-							$.ajax({
-								url:'/api/login',
-								type:'POST',
-								data:{'index':'log','username':user,'password':pass},
-								dataType:'json',
-								success:function(data){
-									if(data.num==0){
-										//alert(data);
-										log_in(data.user);
-									}else{
-										alert('用户名或者密码错误');
-										clear();
-									}
-								}
-							});
-						}else{						
-							sure_error();
+						if(data.num==0){
+							//alert(data);
+							log_in(data.user);
+						}else{
+							alert('用户名或者密码错误');
+							clear();
 						}
 					}
 				});
-
 			}
 		}
 			
@@ -310,33 +297,24 @@ $(function(){//注册
 					var mail = $('#mail').val();
 					var sure = $('#sure_text').val();
 					var sex = $('#sex')[0].checked?1:0;
+
 					$.ajax({
-						url:'/api/reg',
+						url:'api',
 						type:'POST',
-						data:{'index':'sure','code':sure},
+						dataType:'json',
+						data:{'index':'reg','username':user,'password':pass,'mail':mail,'sex':sex},
 						success:function(data){
-							var dt = parseInt(data);
-							if(dt==0){
-								$.ajax({
-									url:'api',
-									type:'POST',
-									dataType:'json',
-									data:{'index':'reg','username':user,'password':pass,'mail':mail,'sex':sex},
-									success:function(data){
-										if(data.num){
-											alert('注册成功！已自动为您登录');
-											log_in(data.user);
-										}else{
-											alert('注册失败');
-											clear();
-										}
-									}
-								});
-							}else{						
-								sure_error();
+							if(data.num){
+								alert('注册成功！已自动为您登录');
+								log_in(data.user);
+							}else{
+								alert('注册失败');
+								clear();
 							}
 						}
-					});
+					})
+							
+				
 				}else{
 					alert('请输入完整信息后再注册');
 					$('#pass').val('');
