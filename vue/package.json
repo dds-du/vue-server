@@ -36,6 +36,7 @@
     "http-proxy-middleware": "^0.17.3",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
+    "moment": "^2.18.1",
     "mysql": "^2.13.0",
     "native-promise-only": "^0.8.1",
     "opn": "^4.0.2",

@@ -151,6 +151,8 @@ function init(){
 	//页面初始时球体运动
 	circle();
 	changeColor();
+
+	//给字体添加颜色
 	function changeColor (){
 		var aLi = oUl.children;
 		for (var i = 0; i < aLi.length; i++) {
@@ -169,7 +171,6 @@ function init(){
 				layer = 2*i-1;
 				break;
 			}
-			
 		}
 		
 		//给ul添加字体，并添加与其位置相关的自定义属性
@@ -205,7 +206,7 @@ function init(){
 		var layer = 15;
 		var num = 0;
 		var it = 0;	
-		//通过字数计算柱体层数
+		//通过字数计算柱体环数，至少3环、。
 		for(var i=3;i<15;i++){
 			if(i*layer>txt.length){
 				it = i-1;
@@ -240,7 +241,7 @@ function init(){
 		var layer = 0;
 		var num = 0;
 		var it = 1;	
-		//通过字数计算柱体层数
+		//通过字数计算柱体层数，至少6层
 		for(var i=6;i<15;i++){
 			if(i*i>txt.length){
 				layer = i-1;
@@ -343,9 +344,9 @@ function init(){
 				radX += speedX*2;
 				radY -= speedY*2;
 				oUl.style.transform = 'rotateY(' + radX + 'deg) rotateX(' + radY + 'deg)';
-			},30);
+			},30)
 
-		});
+		})
 	});
 	
 
@@ -353,7 +354,7 @@ function init(){
 	timer = setInterval(function(){
 		radX++;
 		oUl.style.transform = 'rotateY(' + radX + 'deg) rotateX(' + radY + 'deg)';
-	},30);
+	},30)
 
 	//计算字体位置的函数
 	function coord(obj,alf,beta,i,j){
@@ -362,27 +363,28 @@ function init(){
 		var h =300; //柱体高度
 
 		//在球体中的位置
-		obj.cirX = r*Math.sin(alf*i)*Math.cos(beta*j)+200;
-		obj.cirY = r*Math.sin(alf*i)*Math.sin(beta*j)+200;
-		obj.cirZ = r*Math.cos(alf*i);		
-		obj.alf =alf*i;
-		obj.beta =beta*j+Math.PI/2;
-	
+		obj.cirZ = r*Math.sin(alf*i)*Math.cos(beta*j)
+		obj.cirX = r*Math.sin(alf*i)*Math.sin(beta*j)+200
+		obj.cirY = -r*Math.cos(alf*i)+200
+		obj.alf = alf*i-Math.PI/2
+		obj.beta = beta*j+Math.PI
+		
+		//在下面3个形状中，第三个参数beta表示总层数
 		//在柱体中的位置
 		obj.colX = cR*Math.sin(alf*j)+200;
-		obj.colY = h*i/beta+40;
+		obj.colY = h/beta*i+40;
 		obj.colZ = cR*Math.cos(alf*j);
 		obj.colAlf = alf*j;
 
 		//在椎体中的位置
 		obj.coneX = r*(i/beta)*Math.sin(alf*j)+200;
-		obj.coneY = h*i/beta+40;
+		obj.coneY = h/beta*i+40;
 		obj.coneZ = r*(i/beta)*Math.cos(alf*j);
 		obj.coneAlf = Math.atan(r/h);
 
 		//在斜柱体中的位置
 		obj.obqX = cR*Math.sin(alf*j+Math.PI/beta*i/2)+200;
-		obj.obqY = h*i/beta+40;
+		obj.obqY = h/beta*i+40;
 		obj.obqZ = cR*Math.cos(alf*j+Math.PI/beta*i/2);
 		obj.obqAlf = alf*j+Math.PI/beta*i/2;
 	}

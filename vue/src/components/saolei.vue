@@ -73,8 +73,8 @@ function init_saolei(){
 		init(lat,dif);				
 	}
 
+	//生成格子
 	init(lat,dif);
-	
 	function init(lat,dif){
 		//通过格子数确定父级宽度
 		oUl.style.width = lat*50+'px';
@@ -144,7 +144,8 @@ function init_saolei(){
 			oSd.children[0].style.color = 'red';
 			oSd.children[0].innerHTML = 'Game Over!'								
 			oBg.style.height = clientH+'px';
-			oBg.addEventListener('transitionend',show,false);										
+			oBg.addEventListener('transitionend',show,false);	
+			return 									
 		}		
 		
 		var l = this.offsetLeft;
@@ -156,7 +157,7 @@ function init_saolei(){
 			var nowL = aLi[i].offsetLeft;
 			var nowT = aLi[i].offsetTop;
 				
-			if((Math.abs(nowL-l)<50||Math.abs(nowL-l)==50)&&(Math.abs(nowT-t)<50||Math.abs(nowT-t)==50)&&!(nowL==l&&nowT==t)){
+			if((Math.abs(nowL-l)<=50)&&(Math.abs(nowT-t)<=50)&&!(nowL==l&&nowT==t)){
 				around.push(i);			
 			}	
 		}
@@ -181,8 +182,8 @@ function init_saolei(){
 		}	
 
 		var success = true;
-		//判断游戏成功
-		for(i=0;i<aLi.length;i++){//既不被标记开关也是关着的
+		//判断游戏成功，所有格子既不被标记开关也是打开的
+		for(i=0;i<aLi.length;i++){
 			if(!aLi[i].mark&&aLi[i].onoff){
 				success = false;
 			}

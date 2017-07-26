@@ -16,6 +16,7 @@ $.ajax({
 //发送请求获取验证码cookie
 getSure()
 function getSure(){
+	
 	$.ajax({
 		type:'GET',
 		url:'/api/sure',

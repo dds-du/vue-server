@@ -14,11 +14,9 @@ app.set('view engine','html')
 //开发过程中，取消模板缓存
 swig.setDefaults({cache:false})
 
-//静态文件处理
+//路由设置
 app.use('/static',express.static(__dirname+'/static'))
 app.use('/api',require('./server'))
-
-//app.use(bodyParser.urlencoded({extended:true}))
 app.use('/',(req,res,next)=>{
 	res.render('index.html')
 })
