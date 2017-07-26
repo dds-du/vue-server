@@ -363,39 +363,26 @@
 			"file": "main.js",
 			"settings":
 			{
-				"buffer_size": 627,
+				"buffer_size": 553,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "components/admin.vue",
+			"contents": "import Vue from 'vue'\nimport Router from 'vue-router'\n\nimport index from '@/components/index'\n\nlet error = (resolve)=>{\n  return import ('@/components/error')\n}\nlet saolei = (resolve)=>{\n  return import ('@/components/saolei')\n}\nlet show3d = (resolve)=>{\n  return import ('@/components/3d')\n}\nlet zuma = (resolve)=>{\n  return import ('@/components/zuma')\n}\nlet other = (resolve)=>{\n  return import ('@/components/other')\n}\nlet message = (resolve)=>{\n  return import ('@/components/message')\n}\n\n//后台加载\nlet admin = (resolve)=>{\n  return require.ensure([],function(){\n    resolve(require('@/components/admin'))\n  },'admin') \n}\nlet control = (resolve)=>{\n  return require.ensure([],()=>{\n    resolve(require('@/components/admin/control'))\n  },'admin') \n}\nlet person = (resolve)=>{\n  return require.ensure([],()=>{\n    resolve(require('@/components/admin/person'))\n  },'admin') \n}\n\nVue.use(Router)\n\nlet router = new Router({\n    mode:'history',\n    linkActiveClass:'active',\n    scrollBehavior(to,from,save){//浏览器前进或者后退的时候触发\n    //to:目标页面，from:离开的页面，save:滚动距离\n        if(to.hash){\n            return {\n                selector:to.hash\n            }\n        }\n        return save||{x:0,y:0}\n    },\n    routes: [\n      {\n        path: '/index',\n        name: 'Index',\n        meta:{\n\n        },\n        component: index\n      },\n      {\n        path:'/admin',\n        name:'Admin',\n        meta:{\n          admin:true\n        },\n        component:admin,\n        children:[\n          {\n            path:'/admin/control',\n            component:control,\n            name:'Control',\n            meta:{\n              admin:true\n            },\n          },\n           {\n            path:'/admin/person',\n            component:person,\n            name:'Person',\n            meta:{\n              admin:true\n            },\n          },\n        ]\n      },\n      {\n        path:'/error',\n        name:'Error',\n         meta:{\n          title:'错误页面',\n          error:true\n        },\n        component:error\n      },\n      {\n        path:'/saolei',\n        name:'Saolei',\n        meta:{\n          title:'扫雷游戏'\n        },\n        component:saolei\n      },\n      {\n        path:'/3dshow',\n        name:'Show3d',\n        meta:{\n          title:'3d酷炫图形'\n        },\n        component:show3d\n      },\n      {\n        path:'/zuma',\n        name:'Zuma',\n        meta:{\n          title:'祖玛游戏'\n        },\n        component:zuma\n      },\n       {\n        path:'/message',\n        name:'Message',\n        meta:{\n          title:'留言板'\n        },\n        component:message\n      },\n      {\n        path:'/other',\n        name:'Other',\n        component:other\n      },\n      {\n        path:'*',\n        redirect:(to)=>{\n          if(to.path=='/'){\n            return {\n              name:'Index'\n            }\n          }\n          return {\n            name:'Error'\n          }\n        }\n      }\n    ]\n})\n\nrouter.afterEach((to,from,next)=>{\n    window.document.title=to.meta.title||'DDS个人主页'\n    to.meta.admin?\n})\nexport default router",
+			"file": "router/index.js",
+			"file_size": 3093,
+			"file_write_time": 131455333493817379,
 			"settings":
 			{
-				"buffer_size": 797,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "components/admin/control.vue",
-			"settings":
-			{
-				"buffer_size": 1154,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/C/Users/Administrator/Desktop/vue-server/vue/dist/text.js",
-			"settings":
-			{
-				"buffer_size": 267,
-				"line_ending": "Windows"
+				"buffer_size": 3000,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "app.vue",
 			"settings":
 			{
-				"buffer_size": 2970,
+				"buffer_size": 3095,
 				"line_ending": "Windows"
 			}
 		},
@@ -404,6 +391,22 @@
 			"settings":
 			{
 				"buffer_size": 2262,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "components/admin/control.vue",
+			"settings":
+			{
+				"buffer_size": 178,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "components/userinfo.vue",
+			"settings":
+			{
+				"buffer_size": 1092,
 				"line_ending": "Windows"
 			}
 		}
@@ -415,8 +418,8 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 104.0,
-		"last_filter": "Snippet: ",
+		"height": 392.0,
+		"last_filter": "",
 		"selected_items":
 		[
 			[
@@ -465,18 +468,23 @@
 		"/C/Users/Administrator/Desktop/vue-server/vue/config",
 		"/C/Users/Administrator/Desktop/vue-server/vue/dist",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/assets",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/components",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/components/admin",
-		"/C/Users/Administrator/Desktop/vue-server/vue/src/libs",
-		"/C/Users/Administrator/Desktop/vue-server/vue/src/libs/css",
-		"/C/Users/Administrator/Desktop/vue-server/vue/src/libs/js",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/router",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/store"
 	],
 	"file_history":
 	[
-		"/C/Users/Administrator/Desktop/vue-server/vue/src/components/saolei.vue",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/store/index.js",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/components/test.vue",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/assets/css/saolei.less",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/components/admin/control.vue",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/assets/css/index.less",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/components/admin.vue",
+		"/E/Sublime Text/Data/Packages/sublime-autoprefixer-master/Autoprefixer.sublime-settings",
+		"/E/Sublime Text/Data/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Administrator/Desktop/vue-server/vue/src/components/saolei.vue",
 		"/C/Users/Administrator/Desktop/vue-server/vue/dist/server.js",
 		"/F/wamp/www/servpro/dds/login.php",
 		"/F/wamp/www/servpro/dds/userAgent.php",
@@ -487,17 +495,13 @@
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/assets/css/main.less",
 		"/C/Users/Administrator/Desktop/vue-server/vue/dist/text.js",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/components/admin/person.vue",
-		"/C/Users/Administrator/Desktop/vue-server/vue/src/components/admin/control.vue",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/router/index.js",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/app.vue",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/assets/js/index.js",
-		"/C/Users/Administrator/Desktop/vue-server/vue/src/assets/css/index.less",
 		"/C/Users/Administrator/Desktop/vue-server/vue/dist/app.js",
 		"/C/Users/Administrator/Desktop/vue-server/vue/config/index.js",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/components/other.vue",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/components/error.vue",
-		"/C/Users/Administrator/Desktop/vue-server/vue/src/store/index.js",
-		"/C/Users/Administrator/Desktop/vue-server/vue/src/assets/css/saolei.less",
 		"/F/wamp/www/servpro/dds/sure.php",
 		"/C/Users/Administrator/Desktop/mynode/app.js",
 		"/F/wamp/www/huifankeji/css/index.less",
@@ -599,10 +603,7 @@
 		"/E/站点/扫雷/main.css",
 		"/E/job/job1/case2.html",
 		"/E/job/job5/jquery.fullPage.css",
-		"/E/job/job7/test.html",
-		"/E/job/test.html",
-		"/E/job/《移动端开发深度揭秘》系列公开课/《移动端开发深度揭秘》20161111课件/index.html",
-		"/E/站点/3d图形/3d图形最终版.html"
+		"/E/job/job7/test.html"
 	],
 	"find":
 	{
@@ -701,7 +702,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 8,
 			"sheets":
 			[
 				{
@@ -801,15 +802,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 627,
+						"buffer_size": 553,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								532,
-								532
+								422,
+								422
 							]
 						],
 						"settings":
@@ -821,24 +822,55 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "components/admin.vue",
+					"file": "router/index.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 797,
+						"buffer_size": 3000,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								583,
-								583
+								2842,
+								2842
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3487.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3095,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1847,
+								1847
 							]
 						],
 						"settings":
@@ -848,19 +880,78 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 812.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
+					"file": "components/index.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2262,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								641,
+								641
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/vue-syntax-highlight-master/vue.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 696.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
 					"file": "components/admin/control.vue",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1154,
+						"buffer_size": 178,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								24,
+								24
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "UTF-8",
+							"syntax": "Packages/vue-syntax-highlight-master/vue.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "components/userinfo.vue",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1092,
 						"regions":
 						{
 						},
@@ -873,103 +964,14 @@
 						],
 						"settings":
 						{
-							"origin_encoding": "UTF-8",
+							"open_with_edit": true,
 							"syntax": "Packages/vue-syntax-highlight-master/vue.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 261.0,
+						"translation.y": 174.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/C/Users/Administrator/Desktop/vue-server/vue/dist/text.js",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 267,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app.vue",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2970,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1214,
-								1214
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/vue-syntax-highlight-master/vue.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "components/index.vue",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2262,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								115,
-								117
-							]
-						],
-						"settings":
-						{
-							"origin_encoding": "ASCII",
-							"syntax": "Packages/vue-syntax-highlight-master/vue.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 261.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -1033,24 +1035,32 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "huif",
+		"last_filter": "vue",
 		"selected_items":
 		[
-			[
-				"huif",
-				"F:\\wamp\\www\\huifankeji\\huifan.sublime-project"
-			],
 			[
 				"vue",
 				"C:\\Users\\Administrator\\Desktop\\vue\\vue\\src\\router\\vue.sublime-project"
 			],
 			[
-				"hui",
+				"huif",
 				"F:\\wamp\\www\\huifankeji\\huifan.sublime-project"
+			],
+			[
+				"vu",
+				"C:\\Users\\Administrator\\Desktop\\vue\\vue\\src\\router\\vue.sublime-project"
+			],
+			[
+				"vues",
+				"C:\\Users\\Administrator\\Desktop\\vue-server\\vue\\src\\vues.sublime-project"
 			],
 			[
 				"v",
 				"C:\\Users\\Administrator\\Desktop\\vue\\vue\\src\\router\\vue.sublime-project"
+			],
+			[
+				"hui",
+				"F:\\wamp\\www\\huifankeji\\huifan.sublime-project"
 			],
 			[
 				"boot",

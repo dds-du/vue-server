@@ -40,7 +40,7 @@
 	</div>
 		
 	<div v-if="show" id="header">
-		<router-link id="backIndex" to="/index"  v-if="showBack">返回首页</router-link>
+		<router-link id="backIndex" to="/index"  v-show="showBack">返回首页</router-link>
 		<h1>欢迎大家来到DDS的个人网站！</h1>
 		<div class="head_right">
 			<ul>
@@ -66,27 +66,33 @@
 <script>
 require('jquery')
 import init from '@/assets/js/main'
+import {mapState} from 'vuex'
 
 export default {
 	 data(){
 	 	return {
 	 		show:true,
-	 		showBack:false
+	 		//showBack:false
 	 	}
 	 },
 	 watch:{
 	 	$route(to,from){
 	 		this.show = to.meta.admin?false:true
-	 		this.showBack = to.path=='/index'?false:true		
+	 		to.path=='/index'?this.$store.commit('hideBtn'):this.$store.commit('showBtn')		
 	 	}
 
 	 },
+	 /*computed:{
+	 	showBack(){
+	 		return this.$store.state.showBack
+	 	}
+	 },*/
+	 computed:mapState(['showBack']),
 	 mounted(){
 	 	setTimeout(init,50)
 	 },
 	 created(){
 	 	this.show = this.$route.meta.admin?false:true
-	 	this.showBack = this.$route.path=='/index'?false:true
 	 }
 }
 </script>

@@ -6,7 +6,8 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
 	state:{
-		number:1
+		number:1,
+		showBack:false
 	},
 	getters:{
 		filNum(state){
@@ -15,7 +16,15 @@ export default new Vuex.Store({
 	},
 	//commit
 	mutations:{
-
+		addNum(state){
+			
+		},
+		showBtn(state){
+			state.showBack=true
+		},
+		hideBtn(state){
+			state.showBack=false
+		}
 	},
 	//dispatch
 	actions:{

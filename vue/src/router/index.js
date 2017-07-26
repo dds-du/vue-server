@@ -3,10 +3,6 @@ import Router from 'vue-router'
 
 import index from '@/components/index'
 
-
-let admin = (resolve)=>{
-  return import ('@/components/admin')
-}
 let error = (resolve)=>{
   return import ('@/components/error')
 }
@@ -25,18 +21,38 @@ let other = (resolve)=>{
 let message = (resolve)=>{
   return import ('@/components/message')
 }
+
+//后台加载
+let admin = (resolve)=>{
+  return require.ensure([],function(){
+    resolve(require('@/components/admin'))
+  },'admin') 
+}
 let control = (resolve)=>{
-  return import ('@/components/admin/control')
+  return require.ensure([],()=>{
+    resolve(require('@/components/admin/control'))
+  },'admin') 
 }
 let person = (resolve)=>{
-  return import ('@/components/admin/person')
+  return require.ensure([],()=>{
+    resolve(require('@/components/admin/person'))
+  },'admin') 
 }
 
 Vue.use(Router)
 
 let router = new Router({
-	mode:'history',
-	linkActiveClass:'active',
+    mode:'history',
+    linkActiveClass:'active',
+    scrollBehavior(to,from,save){//浏览器前进或者后退的时候触发
+    //to:目标页面，from:离开的页面，save:滚动距离
+        if(to.hash){
+            return {
+                selector:to.hash
+            }
+        }
+        return save||{x:0,y:0}
+    },
     routes: [
       {
         path: '/index',

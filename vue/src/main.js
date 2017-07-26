@@ -1,20 +1,20 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 
-//引入jquery
-require('jquery')
-
-//require('@lib/css/bootstrap.min.css')
-//require('@lib/css/bootstrap-theme.min.css')
-//require('@lib/js/bootstrap.min.js')
+//使ie支持Promise语法
 require('native-promise-only')
 
+//引入css文件
 require('./assets/css/commen.less')
 
 import Vue from 'vue'
 import App from './App'
 import store from './store'
 import router from './router'
+
+//全局引入自定义组件
+import userinfo from './components/userinfo'
+Vue.component('dds-info',userinfo)
 
 /* eslint-disable no-new */
 new Vue({
