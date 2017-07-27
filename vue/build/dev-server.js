@@ -26,7 +26,7 @@ let bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 
 //接口
-app.use('/api',require('./../dist/server.js'))
+app.use('/api',require('./../server'))
 
 var compiler = webpack(webpackConfig)
 

@@ -13,8 +13,8 @@ import store from './store'
 import router from './router'
 
 //全局引入自定义组件
-import userinfo from './components/userinfo'
-Vue.component('dds-info',userinfo)
+import table from './components/table'
+Vue.component('dds-table',table)
 
 /* eslint-disable no-new */
 new Vue({

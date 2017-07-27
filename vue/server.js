@@ -54,6 +54,14 @@ router.post('/userInfo',(req,res)=>{
 	res.end()
 	
 })
+router.post('/del',(req,res)=>{
+	let query = "DELETE FROM userinfo WHERE i_id = ?"
+	let data  = [req.body.id]
+	sql.query(query,data,(err,rows,fields)=>{
+		 if (err) throw err
+	    res.end()
+	})
+})
 router.post('/name',(req,res)=>{
 	let query = "SELECT * FROM users1 WHERE u_username = ?"
 	let data  = [req.body.username]

@@ -16,7 +16,7 @@ swig.setDefaults({cache:false})
 
 //路由设置
 app.use('/static',express.static(__dirname+'/static'))
-app.use('/api',require('./server'))
+app.use('/api',require('./../server'))
 app.use('/',(req,res,next)=>{
 	res.render('index.html')
 })
