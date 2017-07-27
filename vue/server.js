@@ -34,7 +34,7 @@ router.get('/sure',(req,res)=>{
 })
 
 router.get('/user',(req,res)=>{
-	res.setHeader('charset','utf8;')
+	res.setHeader('charset','utf-8;')
 
 	sql.query("SELECT * FROM userinfo",function(err,rows,fields){
 		if(err) throw err;
@@ -58,8 +58,17 @@ router.post('/del',(req,res)=>{
 	let query = "DELETE FROM userinfo WHERE i_id = ?"
 	let data  = [req.body.id]
 	sql.query(query,data,(err,rows,fields)=>{
-		 if (err) throw err
+		if (err) throw err
 	    res.end()
+	})
+})
+router.post('/userlist',(req,res)=>{
+	res.setHeader('charset','utf-8;')
+	sql.query("SELECT u_id,u_username,u_mail,u_sex,u_birth,u_lasttime,u_lastIP,u_power FROM users1",function(err,rows){
+		if(err) throw err
+
+		res.json(rows)
+		res.end()
 	})
 })
 router.post('/name',(req,res)=>{

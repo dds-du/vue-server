@@ -48,11 +48,15 @@ export default {
  	props:{
  		header:{
  			type:Array,
- 			default:[]
+ 			default(){
+ 				return []
+ 			}
  		},
  		userInfo:{
  			type:Array,
- 			default:[]
+ 			default(){
+ 				return []
+ 			}
  		}
  	},
  	computed:{
