@@ -25,7 +25,6 @@ let bodyParser = require('body-parser')
 let cookieParser = require('cookie-parser')
 let session = require('express-session')
 
-process.env.TZ = 'PRC'
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(session({
