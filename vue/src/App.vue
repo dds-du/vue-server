@@ -48,7 +48,6 @@
 				<li><a id="login" href="javascript:;">登录</a></li>
 				<li><a id="reg" href="javascript:;">注册</a></li>
 				<li><a id="quit" href="javascript:;">退出</a></li>
-				<li><a id="conf" href="api" target="_blank">管理</a></li>
 			</ul>
 		</div>
 	</div>

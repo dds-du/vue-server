@@ -1,7 +1,7 @@
 <template>
   <div class="container">
    	<div class="row">
-   		<div class="col col-lg-10 col-lg-offset-1">
+   		<div class="col col-lg-10 col-lg-offset-1 table-responsive">
    			<table class="table table-bordered table-striped" data-toggle="table">
    				<tbody>
    					<tr>
@@ -52,7 +52,7 @@ export default {
  				return []
  			}
  		},
- 		userInfo:{
+ 		info:{
  			type:Array,
  			default(){
  				return []
@@ -63,15 +63,15 @@ export default {
  		data(){
  			let start = (this.pageNow-1)*this.pageNum
  			let over = start+this.pageNum
- 			over=Math.min(this.userInfo.length,over)
+ 			over=Math.min(this.info.length,over)
  			let arr = []
  			for (let i=start;i<over;i++){
- 				arr.push(this.userInfo[i])
+ 				arr.push(this.info[i])
  			}
  			return arr
  		},
  		page(){
- 			let total = Math.ceil(this.userInfo.length/this.pageNum)
+ 			let total = Math.ceil(this.info.length/this.pageNum)
 
  			let arr = []
  			for(let i=0;i<total;i++){
@@ -90,7 +90,7 @@ export default {
  			this.pageNow--
  		},
  		next(){
- 			if (this.pageNow==Math.ceil(this.userInfo.length/this.pageNum))return
+ 			if (this.pageNow==Math.ceil(this.info.length/this.pageNum))return
  			this.pageNow++
  		},
  		del(id,index){
@@ -101,7 +101,7 @@ export default {
  					url:'/api/del',
  					data:{id:id},
  					success:function(){
- 						_this.userInfo.splice(index,1)
+ 						_this.info.splice(index,1)
  					}
  				})
  			}
@@ -111,7 +111,7 @@ export default {
 </script>
 
 <style>
-table * {text-align: center;}
+.table * {text-align: center;}
 {
 	
 }

@@ -29,7 +29,7 @@ function init(){
 	});
 	
 	for(var i=0;i<dat.length;i++){
-		let $li = $('<li>').html('<h2><span>'+dat[i]['m_username']+'</span>说</h2><div class="msg_cont"><p>'+decodeURI(dat[i]['m_text'])+'</p><i>'+dat[i]['m_time']+'</i></div>');
+		let $li = $('<li>').html('<h2><span>'+dat[i]['m_username']+'</span>说:</h2><div class="msg_cont"><p>'+decodeURI(dat[i]['m_text'])+'</p><i>'+dat[i]['m_time']+'</i></div>');
 		$li.prependTo($('.user_msg'));
 	}
 
@@ -45,14 +45,14 @@ function init(){
 		$.ajax({
 			url:'/api/leav',
 			type:'POST',
-			dataType:'json',
-			data:{'index':'leav','text':msg},
+			data:{'text':msg},
 			success:function(data){
-				alert('留言成功');
-				window.location.reload();
-			},
-			error:function(){
-				alert('留言失败，请先登录');
+				if(data=='1'){
+					alert('留言成功');
+					window.location.reload();
+				}else{
+					alert('留言失败，请先登录');
+				}
 			}
 		})
 	});

@@ -1,6 +1,7 @@
 let express = require('express')
 let router = express.Router()
 let mysql = require('mysql')
+let md5 = require('md5')
 
 let sql = mysql.createConnection({
   host:'localhost',
@@ -12,15 +13,7 @@ let sql = mysql.createConnection({
 sql.connect()
 sql.query("SELECT * FROM users1",function(err,rows,fields){
 	if(err) throw err;
-	//console.log(rows)
 })
-
-	// 获得客户端的Cookie
-   /* var Cookies = {}
-    req.headers.cookie && req.headers.cookie.split(';').forEach(function( Cookie ) {
-        var parts = Cookie.split('=')
-        Cookies[ parts[ 0 ].trim() ] = ( parts[ 1 ] || '' ).trim()
-    })*/
 
 router.get('/sure',(req,res)=>{
 	let sure = Math.ceil(Math.random()*150)+50
@@ -80,24 +73,54 @@ router.post('/name',(req,res)=>{
 	})
 })
 router.post('/init',(req,res)=>{
-	//console.log(req)
-	res.end()
+	let data = {}
+
+	if(req.session.username){
+		data.user = req.session.username
+    	data.num = 1	
+	}else{
+    	data.num = 0
+    }
+   
+    res.json(data)
+    res.end()
+	
 })
-router.post('/sureIn',(req,res)=>{
-	//console.log(req)
-	res.end()
-})
-router.post('/login',(req,res)=>{
-	//console.log(req)
-	res.end()
+
+router.post('/login',(req,res,next)=>{
+	let query = "SELECT u_id FROM users1 WHERE u_username = ? AND u_password= ?"
+	let data  = [req.body.username,md5(req.body.password)]
+	let user = req.body.username
+	sql.query(query,data,(err,rows,fields)=>{
+		if (err) throw err
+	    
+	    if(rows.length==1){
+	    	req.session.username=user
+	    	//console.log(req.session)
+		    res.end('1')
+		}else{
+			res.end()
+		}
+		
+	})
+
+	
 })
 router.post('/reg',(req,res)=>{
-	//console.log(req)
-	res.end()
+	let query = 'INSERT INTO users1 (u_username,u_password,u_mail,u_sex,u_uniqid,u_lastIP,u_birth,u_lasttime) VALUES (?,?,?,?,?,?,NOW(),NOW())'
+	 
+	let body = req.body
+	let data = [body.username,md5(body.password),body.mail,body.sex,md5(Date.now()),req.connection.remoteAddress]
+
+	sql.query(query,data,(err,row)=>{
+		if(err) throw err 
+		req.session.username=body.username
+		res.end('1')
+	})
 })
 router.post('/quit',(req,res)=>{
-	//console.log(req)
-	res.end()
+	req.session.username = ''
+	res.end('0')
 })
 router.post('/msg',(req,res)=>{
 	sql.query("SELECT * FROM message",function(err,rows,fields){
@@ -108,8 +131,15 @@ router.post('/msg',(req,res)=>{
 	})
 })
 router.post('/leav',(req,res)=>{
-	//console.log(req)
-	res.end()
+	let query = 'INSERT INTO message (m_time,m_text,m_username) VALUES (NOW(),?,?)'
+	let data = [req.body.text,req.session.username]
+	if(req.session.username){
+		sql.query(query,data,(err,rows)=>{
+			if(err) throw err 
+		})
+		res.end('1')
+	}
+	res.end('0')
 })
 
 module.exports = router

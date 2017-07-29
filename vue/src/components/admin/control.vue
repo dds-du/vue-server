@@ -1,7 +1,7 @@
 <template>
   <div>
    		<h1 class="text-center">登录信息</h1>
-   		<dds-table :userInfo="userInfo" :header="header"></dds-table>
+   		<dds-table :info="userInfo" :header="header"></dds-table>
    </div>
 		   
 </template>

@@ -1,7 +1,7 @@
 <template>
   <div>
    <h1 class="text-center">用户信息</h1> 
-   <dds-table :userInfo="data" :header="headInfo"></dds-table>
+   <dds-table :info="data" :header="headInfo"></dds-table>
   </div>
 </template>
 

@@ -22,8 +22,20 @@ var proxyTable = config.dev.proxyTable
 
 var app = express()
 let bodyParser = require('body-parser')
+let cookieParser = require('cookie-parser')
+let session = require('express-session')
 
+process.env.TZ = 'PRC'
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(cookieParser())
+app.use(session({
+  secret:'dds is a web worker',
+  cookie:{maxAge:6000*24},
+  resave:true,
+  saveUninitialized: true
+}))
+
+
 
 //接口
 app.use('/api',require('./../server'))

@@ -68,9 +68,9 @@ $(function(){
 		url:'/api/init',
 		dataType:'json',
 		type:'POST',
-		data:{'index':'init'},
 		success:function(data){
 			if(data.num==1){
+				console.log(data.user)
 				$('#log_text').find('span').text('欢迎您，');
 				$('#log_text').find('a').text(data.user);
 				$('#quit').show();
@@ -230,9 +230,9 @@ $(function(){//登录
 					data:{'index':'log','username':user,'password':pass},
 					dataType:'json',
 					success:function(data){
-						if(data.num==0){
+						if(data=='1'){
 							//alert(data);
-							log_in(data.user);
+							log_in(user);
 						}else{
 							alert('用户名或者密码错误');
 							clear();
@@ -300,14 +300,14 @@ $(function(){//注册
 					var sex = $('#sex')[0].checked?1:0;
 
 					$.ajax({
-						url:'api',
+						url:'/api/reg',
 						type:'POST',
 						dataType:'json',
-						data:{'index':'reg','username':user,'password':pass,'mail':mail,'sex':sex},
+						data:{'username':user,'password':pass,'mail':mail,'sex':sex},
 						success:function(data){
-							if(data.num){
+							if(data=='1'){
 								alert('注册成功！已自动为您登录');
-								log_in(data.user);
+								log_in(user);
 							}else{
 								alert('注册失败');
 								clear();
@@ -353,7 +353,6 @@ function quit(){//退出
 	$.ajax({
 		url:'/api/quit',
 		type:'POST',
-		data:{'index':'quit'},
 		dataType:'json',
 		success:function(data){
 			if(data=='0'){
