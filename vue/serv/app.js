@@ -2,8 +2,17 @@ let express = require('express')
 let swig = require('swig')
 let app = express()
 let bodyParser = require('body-parser')
+let cookieParser = require('cookie-parser')
+let session = require('express-session')
 
 app.use(bodyParser.urlencoded({ extended: false }))
+app.use(cookieParser())
+app.use(session({
+	secret:'dds is a web worker',
+	cookie:{maxAge:6000*24},
+	resave:true,
+	saveUninitialized: true
+}))
 
 //配置应用模板
 app.engine('html',swig.renderFile)
@@ -16,7 +25,7 @@ swig.setDefaults({cache:false})
 
 //路由设置
 app.use('/static',express.static(__dirname+'/static'))
-app.use('/api',require('./server'))
+app.use('/api',require('./../server'))
 app.use('/',(req,res,next)=>{
 	res.render('index.html')
 })

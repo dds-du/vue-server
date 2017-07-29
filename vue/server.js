@@ -7,10 +7,22 @@ let sql = mysql.createConnection({
   host:'localhost',
   user:'root',
   password:'',
-  database:'dds'
+  database:'dds',
+  timezone:'+8.00'
 })
 
-sql.connect()
+sql.connect(err=>{
+  if (err) {
+    // 如果是连接断开，自动重新连接
+    if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+      connect();
+    } else {
+      console.error(err.stack || err);
+    }
+  }
+})
+
+
 sql.query("SELECT * FROM users1",function(err,rows,fields){
 	if(err) throw err;
 })
@@ -95,6 +107,7 @@ router.post('/login',(req,res,next)=>{
 		if (err) throw err
 	    
 	    if(rows.length==1){
+	    	sql.query('UPDATE users1 SET u_lasttime=NOW(),u_lastIP=? WHERE u_username=?',[req.connection.remoteAddress,req.body.username])
 	    	req.session.username=user
 	    	//console.log(req.session)
 		    res.end('1')
