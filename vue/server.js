@@ -10,21 +10,11 @@ let sql = mysql.createConnection({
   database:'dds',
   timezone:'+8.00'
 })
-
-sql.connect(err=>{
-  if (err) {
-    // 如果是连接断开，自动重新连接
-    if (err.code === 'PROTOCOL_CONNECTION_LOST') {
-      connect();
-    } else {
-      console.error(err.stack || err);
-    }
-  }
-})
-
-
-sql.query("SELECT * FROM users1",function(err,rows,fields){
-	if(err) throw err;
+sql.connect()
+sql.on('error',function(err){
+	if(err.code=='PROTOCOL_CONNECTION_LOS'){
+		sql.connect()
+	}
 })
 
 router.get('/sure',(req,res)=>{
@@ -112,7 +102,7 @@ router.post('/login',(req,res,next)=>{
 	    	//console.log(req.session)
 		    res.end('1')
 		}else{
-			res.end()
+			res.end('0')
 		}
 		
 	})

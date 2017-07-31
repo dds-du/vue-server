@@ -104,7 +104,7 @@ function init(){
 
 	function back(obj,i){//计算角度，确定位置与偏移量
 		var r = 300;
-		var col = 5;
+		var col = 4;
 		var x = i%col;
 		var y = Math.floor(i/col);
 		obj.style.transform = 'translateX('+ (x*200) +'px) translateY('+ (y*320-100) +'px)';
