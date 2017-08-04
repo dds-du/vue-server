@@ -13,7 +13,6 @@
 			<transition mode="out-in">
 				<router-view></router-view>
 			</transition>
-
 		</div>
 	</div>
 </template>
@@ -25,10 +24,8 @@ export default {
  
 }
 </script>
-
 <style>
-@import url(./../libs/css/bootstrap.min.css);
-@import url(./../libs/css/bootstrap-theme.min.css);
-
-
+	@import url(./../libs/css/bootstrap.min.css);
+	@import url(./../libs/css/bootstrap-theme.min.css);
 </style>
+

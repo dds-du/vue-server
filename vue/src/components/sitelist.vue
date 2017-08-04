@@ -1,5 +1,5 @@
 <template>
-  <div id="site">
+  <div class="main_wrap" id="site">
     <h2>私人收藏站点</h2>
     <ul class="list">
     	<li v-for="item,index of siteList">
@@ -116,7 +116,7 @@ export default {
 </script>
 
 <style>
-#site {background-color: #eee;overflow: hidden;}
+#site {background-color: #eee;overflow: hidden;min-height: 100%;}
 {
 	
 }
