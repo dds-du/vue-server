@@ -1,6 +1,6 @@
 <template>
-  <div id="site" class="main_wrap">
-    <h2>私人收藏的前端站点</h2>
+  <div id="site">
+    <h2>私人收藏站点</h2>
     <ul class="list">
     	<li v-for="item,index of siteList">
     		<a @dblclick="dbl($event,item.s_id)" v-show="item.s_id!=edSite" :href="item.s_url" target="blank">{{item.s_title}}</a>
@@ -65,28 +65,28 @@ export default {
 		},
 		del(id,index){
 			let _this = this
-			$.ajax({
-				url:'/api/siteDel',
-				type:'POST',
-				data:{id:id},
-				success:function(data){
-					console.log(data)
-					if(data=='1'){
-						alert('删除成功')
-						_this.siteList.splice(index,1)
-					}else{
-						alert('对不起，只有管理员可以修改此选项')
+			if(confirm('确定要删除此数据吗？')){
+				$.ajax({
+					url:'/api/siteDel',
+					type:'POST',
+					data:{id:id},
+					success:function(data){
+						if(data=='1'){
+							_this.siteList.splice(index,1)
+						}else{
+							alert('对不起，只有管理员可以修改此选项')
+						}
 					}
-				}
-			})
+				})
+			}
 		},
 		sub(){
 			let _this = this
 			let s_title = $('#s_title').val()
 			let s_url = $('#s_url').val()==''?'javascript:;':$('#s_url').val()
-			let s_text = $('#s_text').val()
+			let s_text = $('#s_text').val()==''?$('#s_title').val():$('#s_text').val()
 			console.log(s_title)
-			if (s_title==''||s_text==''){
+			if (s_title==''){
 				alert('请输入内容后再提交')
 				return
 			}
@@ -116,7 +116,7 @@ export default {
 </script>
 
 <style>
-#site {background-color: #eee;}
+#site {background-color: #eee;overflow: hidden;}
 {
 	
 }

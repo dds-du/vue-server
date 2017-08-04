@@ -16,7 +16,6 @@
 		   </table>
    		</div>
   	</div>
-
   	<nav class="text-center" style="padding-bottom:50px;" aria-label="Page navigation">
 	  <ul class="pagination">
 	    <li>
