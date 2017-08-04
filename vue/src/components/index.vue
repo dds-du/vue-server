@@ -15,19 +15,15 @@
 					<img src="/static/img/zuma.jpg" alt="">
 					<div class="mask"></div>
 				</router-link>
-				<router-link to="/saolei" tag="li">
+				<router-link to="/site" tag="li">
 					<img src="/static/img/pic.jpg" alt="">
 					<div class="mask"></div>
 				</router-link>
-				<!-- <router-link to="/saolei" tag="li">
-					<img src="/static/img/case2/food1.png" alt="">
-					<div class="mask"></div>
-				</router-link> -->
 				<router-link to="/saolei" tag="li">
 					<img src="/static/img/case3/bg1.jpg" alt="">
 					<div class="mask"></div>
 				</router-link>
-				<router-link to="/saolei" tag="li">
+				<router-link to="/site" tag="li">
 					<img src="/static/img/1.jpg" alt="">
 					<div class="mask"></div>
 				</router-link>

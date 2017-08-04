@@ -201,7 +201,12 @@ function init(){
 	
 	}
 
+	var is_over = false;
 	function Over(){
+		if(is_over){
+			return
+		}
+		is_over = true
 		alert('Game Over!\n你的最终得分是:'+score +'\n点击“游戏开始”，重新开始游戏~');	
 		window.location.reload();		
 	}

@@ -7,7 +7,7 @@
    					<tr>
    						<th :width="item.wid" v-for="item of header">{{item.title}}</th>
 				   	</tr>
-				   	<tr v-for="item,index of data">
+				   	<tr v-for="item of data">
 				   		<th v-for="(val,key) of item">{{val}}</th>
 				   		<th><a @click="del(item.i_id,index)" href="javascript:;">删除</a></th>
 				   	</tr>

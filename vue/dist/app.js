@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(cookieParser())
 app.use(session({
 	secret:'dds is a web worker',
-	cookie:{maxAge:60*2400},
+	cookie:{maxAge:6000*30},
 	resave:true,
 	saveUninitialized: true
 }))

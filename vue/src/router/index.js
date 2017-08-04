@@ -21,6 +21,9 @@ let other = (resolve)=>{
 let message = (resolve)=>{
   return import ('@/components/message')
 }
+let site = (resolve)=>{
+  return import ('@/components/sitelist')
+}
 
 //后台加载
 let admin = (resolve)=>{
@@ -121,7 +124,7 @@ let router = new Router({
         },
         component:zuma
       },
-       {
+      {
         path:'/message',
         name:'Message',
         meta:{
@@ -132,7 +135,18 @@ let router = new Router({
       {
         path:'/other',
         name:'Other',
+        meta:{
+          title:'开发中...'
+        },
         component:other
+      },
+      {
+        path:'/site',
+        name:'Site',
+        meta:{
+          title:'个人收藏的精品网站'
+        },
+        component:site
       },
       {
         path:'*',

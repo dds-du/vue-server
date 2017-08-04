@@ -144,5 +144,36 @@ router.post('/leav',(req,res)=>{
 	}
 	res.end('0')
 })
+router.post('/siteList',(req,res)=>{
+	sql.query('SELECT * FROM site',(err,rows)=>{
+		if (err) throw err 
+		res.json(rows)
+		res.end()
+	})
+})
+router.post('/siteAdd',(req,res)=>{
+	if(req.session.username!='dds'){
+		res.end('n')
+		return
+	}
+	let query = "INSERT INTO site (s_title,s_url,s_text) VALUES (?,?,?)"
+	let data = [req.body.s_title,req.body.s_url,req.body.s_text]
+	sql.query(query,data,(err,rows)=>{
+		if (err) throw err 
+		res.end('y')
+	})
+})
+router.post('/siteDel',(req,res)=>{
+	if(req.session.username!='dds'){
+		res.end('n')
+		return
+	}
+	let query = "DELETE from site WHERE s_id = ?"
+	let data = req.body.id 
+	sql.query(query,data,(err,rows)=>{
+		if (err) throw err 
+		res.end('1')
+	})
+})
 
 module.exports = router
