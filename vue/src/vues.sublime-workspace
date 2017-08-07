@@ -384,6 +384,14 @@
 			}
 		},
 		{
+			"file": "/C/Users/Administrator/Desktop/vue-server/vue/build/utils.js",
+			"settings":
+			{
+				"buffer_size": 1949,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "components/admin.vue",
 			"settings":
 			{
@@ -470,9 +478,9 @@
 	[
 		"/C/Users/Administrator/Desktop/vue-server",
 		"/C/Users/Administrator/Desktop/vue-server/vue",
+		"/C/Users/Administrator/Desktop/vue-server/vue/build",
 		"/C/Users/Administrator/Desktop/vue-server/vue/config",
 		"/C/Users/Administrator/Desktop/vue-server/vue/dist",
-		"/C/Users/Administrator/Desktop/vue-server/vue/src",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/assets",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/assets/css",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/assets/js",
@@ -484,6 +492,8 @@
 	],
 	"file_history":
 	[
+		"/C/Users/Administrator/Desktop/webpack/webpack.dev.js",
+		"/C/Users/Administrator/Desktop/webpack/webpack.serve.js",
 		"/C/Users/Administrator/Desktop/webpack/webpack.config.js",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/assets/css/commen.less",
 		"/C/Users/Administrator/Desktop/vue-server/vue/src/components/message.vue",
@@ -609,9 +619,7 @@
 		"/E/站点/祖玛游戏/bullet.js",
 		"/E/站点/祖玛游戏/ball.js",
 		"/E/站点/祖玛游戏/祖玛.html",
-		"/E/站点/祖玛游戏/111.js",
-		"/E/job/vue/index.html",
-		"/E/job/webpk/package.json"
+		"/E/站点/祖玛游戏/111.js"
 	],
 	"find":
 	{
@@ -629,6 +637,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"test",
+			"post",
+			"auto",
 			"time",
 			"mysqld",
 			"userInfo",
@@ -713,7 +724,7 @@
 	"groups":
 	[
 		{
-			"selected": 7,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -744,7 +755,7 @@
 						"translation.y": 435.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -835,7 +846,7 @@
 						"translation.y": 3654.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -862,10 +873,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3959.0,
+						"translation.y": 3089.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -896,11 +907,42 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 6,
+					"file": "/C/Users/Administrator/Desktop/vue-server/vue/build/utils.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1949,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								838,
+								838
+							]
+						],
+						"settings":
+						{
+							"origin_encoding": "ASCII",
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1218.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
 					"file": "components/admin.vue",
 					"semi_transient": false,
 					"settings":
@@ -926,11 +968,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
 					"file": "assets/css/site.less",
 					"semi_transient": false,
 					"settings":
@@ -957,11 +999,11 @@
 						"translation.y": 522.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 9,
 					"file": "components/index.vue",
 					"semi_transient": false,
 					"settings":
@@ -984,14 +1026,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 435.0,
+						"translation.y": 174.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 10,
 					"file": "app.vue",
 					"semi_transient": false,
 					"settings":
@@ -1017,7 +1059,7 @@
 						"translation.y": 790.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 10,
 					"type": "text"
 				}
 			]
@@ -1081,9 +1123,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "vue",
+		"last_filter": "v",
 		"selected_items":
 		[
+			[
+				"v",
+				"C:\\Users\\Administrator\\Desktop\\vue\\vue\\src\\router\\vue.sublime-project"
+			],
 			[
 				"vue",
 				"C:\\Users\\Administrator\\Desktop\\vue\\vue\\src\\router\\vue.sublime-project"
@@ -1102,10 +1148,6 @@
 			],
 			[
 				"vu",
-				"C:\\Users\\Administrator\\Desktop\\vue\\vue\\src\\router\\vue.sublime-project"
-			],
-			[
-				"v",
 				"C:\\Users\\Administrator\\Desktop\\vue\\vue\\src\\router\\vue.sublime-project"
 			],
 			[
